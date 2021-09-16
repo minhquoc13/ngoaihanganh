@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.laptrinhjavaweb.dao.impl.UserDAO;
 
-@WebServlet(urlPatterns = { "/prolife" })
+@WebServlet(urlPatterns = { "/profile" })
 
-public class ProlifeController extends HttpServlet {
+public class ProfifeController extends HttpServlet {
 
 	@Inject
 	private UserDAO userDAO;
@@ -24,6 +24,14 @@ public class ProlifeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String id = request.getParameter("id");
+		request.setAttribute("user", userDAO.findUserById(id));
+		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Profile.jsp");
+		rd.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String action = request.getParameter("action");
 		if (action != null) {
 			// if else
@@ -39,21 +47,16 @@ public class ProlifeController extends HttpServlet {
 				String status = request.getParameter("status");
 				String roleId = request.getParameter("roleId");
 				userDAO.updateUser(id, userName, password, fullName, email, phone, age, avatar, status, roleId);
-			} 
-			else if (action.equals("editAvatar")) {
+			} else if (action.equals("editAvatar")) {
 				Long id = Long.parseLong(request.getParameter("id"));
 				String avatar = request.getParameter("avatar");
 				userDAO.updateAvatar(id, avatar);
 			}
 		}
+		
 		String id = request.getParameter("id");
 		request.setAttribute("user", userDAO.findUserById(id));
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Profile.jsp");
 		rd.forward(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
 	}
 }

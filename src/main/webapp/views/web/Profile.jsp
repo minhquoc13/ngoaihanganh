@@ -48,14 +48,13 @@ pageEncoding="UTF-8"%>
                     <!-- User -->
                     <ul class="navbar-nav align-items-center d-md-flex">
                         <li class="nav-item dropdown">
-                            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="acc">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
                                         <c:if test="${user.avatar == NULL or user.avatar == ''}"><img alt="${user.fullName}" src="<c:url value='/template/web1/Images/imguserdefault.png' />"></c:if>
                                         <c:if test="${user.avatar != NULL and user.avatar != ''}"><img alt="${user.fullName}" src="${user.avatar}"></c:if>
                                     </span>
                                     <div class="media-body ml-2 d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold">${user.fullName}</span>
+                                        <a href="thoat?action=logout" class="mb-0 text-sm text-white font-weight-bold">Đăng xuất</a>
                                     </div>
                                 </div>
                             </a>
@@ -183,7 +182,7 @@ pageEncoding="UTF-8"%>
                                 </div>
                             </div>
                         </div>
-                        <form action="prolife" method="get">
+                        <form id="dataUserForm" action="profile" method="post">
                             <div class="card bg-secondary shadow" id="edit" id="edit" style="display:none;">
                                 <div class="card-header bg-white border-0">
                                     <div class="row align-items-center">
@@ -278,16 +277,17 @@ pageEncoding="UTF-8"%>
         <!--  -->
         <script>
         function editProlife() {
-        var v = document.getElementById("view");
-        var e = document.getElementById("edit");
-        if (v.style.display === "none") {
-        v.style.display = "block";
-        e.style.display = "none";
-        } else {
-        v.style.display = "none";
-        e.style.display = "block";
+	        var view = document.getElementById("view");
+	        var edit = document.getElementById("edit");
+	        if (view.style.display === "none") {
+	        	view.style.display = "block";
+	        	edit.style.display = "none";
+	        } else {
+	        	view.style.display = "none";
+	        	edit.style.display = "block";
+	        }
         }
-        }
+        
         </script>
     </body>
 </html>		

@@ -40,11 +40,11 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav" id="navbar">
-			<li class="nav-item"><a href="trang-chu" class="nav-link z">Trang chủ</a></li>
-			<li class="nav-item"><a href="tin-tuc" class="nav-link z">Tin tức</a></li>
-			<li class="nav-item"><a href="video" class="nav-link z">Video</a></li>
-			<li class="nav-item"><a href="lich-dau" class="nav-link z">Lịch đấu</a></li>
-			<li class="nav-item"><a href="bang-xep-hang" class="nav-link z">BXH</a></li>
+			<li class="nav-item"><a href="<c:url value="/trang-chu"/>" class="nav-link z">Trang chủ</a></li>
+			<li class="nav-item"><a href="<c:url value="/tin-tuc"/>" class="nav-link z">Tin tức</a></li>
+			<li class="nav-item"><a href="<c:url value="/video"/>" class="nav-link z">Video</a></li>
+			<li class="nav-item"><a href="<c:url value="/lich-dau"/>" class="nav-link z">Lịch đấu</a></li>
+			<li class="nav-item"><a href="<c:url value="/bang-xep-hang"/>" class="nav-link z">BXH</a></li>
 			
 			<li class="nav-item">
 				<a href="#" class="nav-link z">Xem thêm<i class="fas fa-caret-down"></i></a>
@@ -79,7 +79,7 @@
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="acc">
-                <a href="prolife?id=${USERMODEL.id}" class="dropdown-item">
+                <a href="profile?id=${USERMODEL.id}" class="dropdown-item">
                   <i class="fas fa-user"></i>
                   <span>Trang cá nhân</span>
                 </a>

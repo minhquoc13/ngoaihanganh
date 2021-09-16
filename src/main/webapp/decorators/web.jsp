@@ -31,5 +31,7 @@
 	<script type="text/javascript" src="<c:url value='/template/web1/bootstrap/jquery/jquery-3.6.0.js' />"></script>
     <script type="text/javascript" src="<c:url value='/template/web1/bootstrap/js/bootstrap.bundle.min.js' />"></script>
 	<script type="text/javascript" src="<c:url value='/template/web1/bootstrap/js/bootstrap.min.js' />"></script>
+	<!-- SDK Facebook -->
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=390908026024049&autoLogAppEvents=1" nonce="HwO0a0mC"></script>
 </body>
 </html>

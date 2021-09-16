@@ -18,7 +18,7 @@
         <pattern>/dang-nhap</pattern>
     </decorator>
     
-    <decorator name="prolife" page="">
-        <pattern>/prolife</pattern>
+    <decorator name="profile" page="">
+        <pattern>/profile</pattern>
     </decorator>
 </decorators>

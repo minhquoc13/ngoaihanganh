@@ -42,12 +42,8 @@
 					<div class="fb-comments" data-width="100%" data-numposts="5"></div>
 				</section>	
 			</div>
-			<div>${currentHref}</div>
 		</main>
 		<link href="<c:url value='/template/web1/css/stylepage-baiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
 		<link href="<c:url value='/template/web1/css/responsive/baiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
-		<!-- SDK facebook -->
-		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=170734908381035&autoLogAppEvents=1" nonce="syfE2HVM"></script>
-				
 </body>
 </html>

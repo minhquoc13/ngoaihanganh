@@ -135,11 +135,11 @@
 							</div>
 							<!-- Social Login -->
 							<div class="form-group col-lg-12 mx-auto">
-								<a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
+								<a onclick="FB.login()" class="btn btn-primary btn-block py-2 btn-facebook">
 									<i class="fab fa-facebook-f mr-2"></i>
 									<span class="font-weight-bold">Tiếp tục với Facebook</span>
 								</a>
-								<a href="#" class="btn text-white btn-block py-2 btn-twitter" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">
+								<a onclick="FB.logout()" class="btn text-white btn-block py-2 btn-twitter" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">
 									<i class="fab fa-instagram mr-2"></i>
 									<span class="font-weight-bold">Tiếp tục với Instagram</span>
 								</a>

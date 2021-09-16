@@ -39,11 +39,12 @@
                                                 <input class="form-check-input" name="remember" value="1" id="inputRememberPassword" type="checkbox" />
                                                 <label class="form-check-label" for="inputRememberPassword">Nhớ mật khẩu</label>
                                             </div>
-                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
                                                 <a class="small" href="">Quên mật khẩu?</a>
-                                                <button type="submit" class="btn btn-primary" >Đăng nhập</button>
-                                                <input type="hidden" value="login" name="action"/>
+                                                <button type="submit" class="btn btn-primary" >Đăng nhập</button>                                                
                                             </div>
+                                            <!-- Login fb button -->
+											<div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>                                             <input type="hidden" value="login" name="action"/>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
