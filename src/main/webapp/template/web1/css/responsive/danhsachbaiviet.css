@@ -1,0 +1,22 @@
+
+/* responsive */
+
+
+@media (max-width: 992px){
+	.wrapper{
+		padding: 0 15px 20px 15px;
+	}
+	.wrapper form{
+		width: 50%;
+	}
+	.newsList .thumbnail {
+		width: 30%;
+	}
+	.newsList figure figcaption{
+		width: 70%;
+	}
+}
+
+@media (max-width: 576px){
+	
+}

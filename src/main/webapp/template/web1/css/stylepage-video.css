@@ -1,0 +1,70 @@
+
+/**/
+
+.page-hero{
+	background-color: #37003c;    
+    background-image: url(https://www.premierleague.com/resources/prod/df660c3-3506/i/bg-elements/heading-bg-desktop.svg);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto; 
+    position: relative;
+}
+.header-content{
+	padding: 70px 80px;
+}
+
+.page-title{
+	color: white;
+	font-size: 40px;
+	font-weight: 700;
+}
+.news-tag{
+	color: #ff2882;	
+}
+.news-time{
+	font-size: 15px;
+	color: white;
+	font-weight: 300;
+}
+
+
+.social-share{
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	background: white;
+	color: black;
+	font-weight: bold;
+	padding: 4px;
+	border-radius: 5px;
+}
+.social-share i{
+	margin-right: 3px;
+}
+
+.btn-share{
+	padding: 3px;
+}
+
+.wrapper{
+	padding: 80px 80px;
+}
+
+/*news content*/
+
+.video-section{
+	padding: 50px 0px;
+}
+.shortDecription{
+	margin-top: 10px;	
+	font-size: 27px;
+	font-weight: 700;
+}
+.wrapper iframe{
+	width: 100%;
+	height: 470px;
+}
+

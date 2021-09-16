@@ -1,0 +1,18 @@
+
+/* responsive */
+
+
+@media (max-width: 992px){
+	.wrapper{
+		padding: 0px 15px;
+	}
+	.news-section{
+		padding-left: 0px;
+	}
+	.header-content{
+		padding: 70px 20px;
+	}
+}
+@media (max-width: 576px){
+	
+}

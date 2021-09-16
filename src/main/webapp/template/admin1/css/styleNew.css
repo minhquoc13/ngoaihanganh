@@ -1,0 +1,16 @@
+.dt-buttons{
+float:right;
+    margin-bottom: 20px;
+}
+
+#btnDelete{
+    margin: 0px 10px;
+}
+
+table img{
+	height: 60px;
+	width: 60px;
+}
+table tr{
+	vertical-align : middle;
+}

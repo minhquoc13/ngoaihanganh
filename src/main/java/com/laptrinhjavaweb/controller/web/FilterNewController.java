@@ -1,0 +1,47 @@
+package com.laptrinhjavaweb.controller.web;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.service.ICategoryService;
+import com.laptrinhjavaweb.service.INewService;
+
+@WebServlet(urlPatterns = {"/filter"})
+
+public class FilterNewController extends HttpServlet {
+
+	@Inject
+	private INewService newService;
+	@Inject ICategoryService cate;
+	
+	private static final long serialVersionUID = 2686801510274002166L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String cid1 = request.getParameter("cid");
+		Long cid = Long.parseLong(cid1);
+		if(cid != 0){
+			List<NewModel> filterNew = newService.findByCategoryId(cid);
+			request.setAttribute("allnews", filterNew);
+			Long c = cid;
+			request.setAttribute("se", c);
+			request.setAttribute("category", cate.findAll());
+			RequestDispatcher rd = request.getRequestDispatcher("/views/web/Danhsachbaiviet.jsp");
+			rd.forward(request, response);
+		} else response.sendRedirect(request.getContextPath() + "/tin-tuc");
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+}

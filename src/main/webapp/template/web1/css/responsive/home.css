@@ -1,0 +1,169 @@
+
+/* responsive */
+/*
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+}
+/*
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1320px) {
+.top-bar{
+display: none;
+}
+
+.colmid{
+padding: 0 10px;
+}
+.colleft{
+width: 95%;
+}
+}
+
+/*
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+.top-bar{
+display: none;
+}
+
+.colleft{
+display: none;
+}
+.colmid{
+padding: 0 10px;
+flex: auto;
+max-width: 100%;
+}
+.hero1 figcaption{
+padding: 10px;
+}
+.hero-chienthuat{
+height: 140px;
+}
+.hero2 .thumbnail{
+width: 20%;
+}
+.hero-chienthuat figcaption{
+width: 80%;
+}
+}
+/*
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+@media (min-width: 100px) and (max-width: 767px) {
+.top-bar{
+display: none;
+}
+#colleft{
+padding: 0;
+}
+.colleft{
+display: none;
+}
+.colmid{
+padding: 0 10px;
+}
+.hero1{
+display: grid;
+}
+.tinmoinhat figure{
+display: inline-flex;
+}
+.colmidbot .viewMore{
+	display: none;
+}
+.list-new .thumbnail{
+	width: 20%;
+}
+.list-new figcaption{
+	border-top: 2px solid #e9e8e8;
+	width: 80%;
+	}
+.list-new .col-3{
+	margin-bottom: 7px;
+	max-width: 100%;
+flex: auto;
+}
+.video4 figcaption{
+	width: 80%;
+	border-top: 3px solid #e9e8e8;
+}
+.video4 figure{
+display: inline-flex;
+width: 100%;
+}
+.video4 .thumbnail{
+	width: 20%;
+}
+.video4{
+	margin-top: 20px;
+	max-width: 100%;
+flex: auto;
+}
+.video4 .col-6{
+	max-width: 100%;
+flex: auto;
+margin-bottom: 10px;
+}
+.video-main{
+	max-width: 100%;
+flex: auto;
+}
+footer .container{
+flex: 100%;
+max-width: 100%;
+}
+.footer-dark{
+padding: 13px 0px 5px;
+}
+.footer-dark .copyright{
+padding-top: 10px;
+}
+footer .row{
+	flex-wrap: unset;
+}
+}
+
+
+/* responsive navbar */
+
+@media (min-width: 1375px){
+	
+	#navbar{
+		margin-left: 5%;
+	}
+	#navbar-right{
+		position: absolute;
+		right: 0;
+	}
+	
+}
+@media (min-width: 992px) and (max-width: 1374px) {
+	
+	#navbar{
+		margin-left: 5%;
+	}
+	#navbar-right{
+		position: absolute;
+		right: 0;
+	}
+	#navbar-right .form-inline{
+		display: none!important;
+	}
+}
+@media (max-width: 991px) {
+	#navbar{
+		margin-left: unset;
+	}
+	#navbar-right{
+		position: relative!important;
+	}
+}

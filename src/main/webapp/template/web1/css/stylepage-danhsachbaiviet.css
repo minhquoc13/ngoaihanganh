@@ -1,0 +1,186 @@
+
+/**/
+
+li{
+	list-style-type: none;
+}
+
+.page-hero{
+	background-color: #37003c;    
+    background-image: url(https://www.premierleague.com/resources/prod/df660c3-3506/i/bg-elements/heading-bg-desktop.svg);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    margin-left: auto;
+    margin-right: auto; 
+    position: relative;
+}
+.header-content{
+	padding: 70px 80px;
+}
+
+.page-title{
+	color: white;
+	font-size: 45px;
+	font-weight: 700;
+}
+.news-tag{
+	color: #ff2882;	
+}
+.news-time{
+	font-size: 15px;
+	color: white;
+	font-weight: 300;
+}
+
+
+.social-share{
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	background: white;
+	color: black;
+	font-weight: bold;
+	padding: 4px;
+	border-radius: 5px;
+}
+.social-share i{
+	margin-right: 3px;
+}
+
+.btn-share{
+	padding: 3px;
+}
+
+.wrapper{
+	padding: 80px 30px 80px 80px;
+}
+
+.wrapper{
+	margin-top: 30px;
+}
+.pageFilter{
+	padding: 20px;
+	border: 2px solid #e8e8e8;
+}
+.label{
+	display: inline-block;
+	font-style: italic;
+	font-size: 23px;
+	font-weight: 700;
+	color: #963cff;
+}
+.form-select{
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 400;
+	margin-left: 5px;	
+}
+.btn-filter{
+	display: inline-block;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: 600;
+	vertical-align: inherit;
+	margin-left:  20px;
+
+}
+.btn-filter i{
+	vertical-align: middle;
+	font-size: 23px;
+}
+
+
+
+/*LIST*/
+
+.newsList li{
+	margin-top: 20px;
+	border: 1px solid #e8e8e8;
+}
+
+figure{
+	display: flex;
+	overflow: hidden;
+}
+.newsList figure figcaption{
+	display: flex;
+	flex-direction: column!important;
+	width: 65%;
+	float: left;
+	justify-content: center;
+	padding: 10px 30px 30px 30px;
+	color: black;
+}
+.newsList a{
+	width: 100%;
+
+}
+.thumbnail{
+	width: 35%;
+	float: left;
+	position: relative;
+	overflow-x: clip;
+}
+.thumbnail img{
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	-webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+.news-tag{
+	font: italic;
+	color :#e90052;
+	font-weight: 600;
+	font-size: 14px;
+}
+.news-title{
+	font-size: 35px;
+	margin-bottom: 20px;
+}
+.text{
+	font-weight: 400;
+	font-size: 17px;
+	color: #6c6c6c;
+}
+
+/*transittion*/
+figure:hover img, figure:focus img {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+figure:hover img:before, figure:focus img:before {
+    display: block;
+}
+img:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(52,73,94,0.75);
+}
+#loadMore{
+    position: relative;
+    left: 50%;
+    width: 80px;
+    height: 75px;
+    background: lightgray;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+#loadMore i{
+	font-size: 30px;
+}
+

@@ -1,0 +1,39 @@
+
+.main-content{
+	
+}
+
+.breadcrumbs{
+	padding: 15px 0px 0px 20px;
+}
+
+
+
+/*list*/
+
+.dt-buttons btn-overlap, .btn-group{
+	float: right;
+	margin-bottom: 10px;
+}
+
+#btnDelete{
+	margin: 0px 10px 0px 10px;
+}
+
+table tr{
+	font-size: 15px;
+}
+
+.add{
+    position: relative;
+    float: right;
+    right: 260px;
+    }
+    
+    table tr th img{
+        width: 40px;
+    }
+    
+    table tr td{
+	vertical-align : middle;
+}

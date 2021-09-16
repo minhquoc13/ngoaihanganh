@@ -1,0 +1,81 @@
+
+/**/
+
+.page-hero{
+	background-color: #37003c;
+    margin-top: 50px;
+    background-image: url(https://www.premierleague.com/resources/prod/df660c3-3506/i/bg-elements/heading-bg-desktop.svg);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    margin-bottom: 50px;
+    padding: 100px 80px;
+    position: relative;
+}
+
+.page-title{
+	color: white;
+	font-size: 45px;
+	font-weight: 700;
+}
+
+
+.social-share{
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	background: white;
+	color: black;
+	font-weight: bold;
+	padding: 4px;
+	border-radius: 5px;
+}
+.social-share i{
+	margin-right: 3px;
+}
+
+.btn-share{
+	padding: 3px;
+}
+
+/*table content*/
+table{
+	display: table;
+	text-indent: initial;
+	border-color: grey!important;
+}
+thead{
+	background-color: #fbfbfb;
+}
+
+tr{
+	vertical-align: inherit!important;
+	display: table-row;
+	border-color: inherit;
+	text-align: center;
+}
+
+
+.wrapper{
+	 padding: 100px 80px;
+}
+
+.table td , .table th{
+	vertical-align: middle;
+}
+.matchAbridged{
+	background: none;
+	border: none;
+	padding: 0;
+}
+.matchAbridged .teamName{
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: normal;
+	min-width: 220px;
+}
+.matchAbridged time{
+	font-size: 15px;
+	font-weight: bold;
+}
+
