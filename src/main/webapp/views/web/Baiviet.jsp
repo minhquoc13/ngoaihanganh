@@ -4,8 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${baiviet.title}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>${baiviet.title}</title>
 </head>
 <body>
 		<main>
@@ -43,7 +43,7 @@
 				</section>	
 			</div>
 		</main>
-		<link href="<c:url value='/template/web1/css/stylepage-baiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
-		<link href="<c:url value='/template/web1/css/responsive/baiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/stylepage-baiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/responsive/baiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
 </body>
 </html>

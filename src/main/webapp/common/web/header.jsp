@@ -6,32 +6,32 @@
 	<div class="container">
 		<ul class="list-inline justify-content-center">
 			<li class="list-inline-item"><span>Câu lạc bộ <i class="bi bi-arrow-up-right-square"></i></span></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t3.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t7.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t94.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t36.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t90.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t8.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t31.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t11.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t2.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t13.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t14.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t43.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t1.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t4.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t45.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t20.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t6.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t57.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t21.png' />"></a></li>
-			<li class="list-inline-item"><a href=""><img src="<c:url value='/template/web1/Images/t39.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t3.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t7.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t94.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t36.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t90.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t8.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t31.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t11.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t2.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t13.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t14.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t43.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t1.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t4.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t45.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t20.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t6.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t57.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t21.png' />"></a></li>
+			<li class="list-inline-item"><a href=""><img src="<c:url value='/resources/web/images/t39.png' />"></a></li>
 			
 		</ul>
 	</div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark fixed">
-	<a href="trang-chu" class="navbar-brand p-0"><img src="<c:url value='/template/web1/Images/logo.png' />"></a>
+	<a href="trang-chu" class="navbar-brand p-0"><img src="<c:url value='/resources/web/images/logo.png' />"></a>
 	
 	<a href="trang-chu" class="navbar-brand">Ngoại hạng Anh</a>
 	
@@ -59,7 +59,7 @@
 			<li class="nav-item mt-auto mb-auto">
 				<form class="form-inline">
 					<input class="form-control mr-md-1" type="search" name="search" placeholder="Tìm kiếm..." aria-label="search">
-					<button class="btn btn-success" type="submit"><i class="bi bi-search"></i>
+					<button class="btn btn-success" type="submit"><i class="fas fa-search"></i>
 					</button>
 				</form>
 			</li>
@@ -70,7 +70,7 @@
               <a class="nav-link p-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="acc">
                 <div class="media align-items-center">
                   <span class="avatar">
-                    <c:if test="${USERMODEL.avatar == NULL or USERMODEL.avatar == ''}"><img class="rounded-circle" alt="${USERMODEL.fullName}" src="<c:url value='/template/web1/Images/imguserdefault.png' />" style="height: 45px;"></c:if>
+                    <c:if test="${USERMODEL.avatar == NULL or USERMODEL.avatar == ''}"><img class="rounded-circle" alt="${USERMODEL.fullName}" src="<c:url value='/resources/web/images/imguserdefault.png' />" style="height: 45px;"></c:if>
                     <c:if test="${USERMODEL.avatar != NULL and USERMODEL.avatar != ''}"><img class="rounded-circle" alt="${USERMODEL.fullName}" src="${USERMODEL.avatar}" style="height: 45px;"></c:if>        	
                   </span>
                   <div class="media-body ml-2 text-white">

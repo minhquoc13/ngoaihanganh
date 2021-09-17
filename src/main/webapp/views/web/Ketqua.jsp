@@ -18,7 +18,7 @@
 				</div>
 			</header>
 			<div class="wrapper pt-0 pb-3">
-				<img src="<c:url value='/template/web1/Images/premier-league-3-logo.png' />" style="width: 20%">
+				<img src="<c:url value='/resources/web/Images/premier-league-3-logo.png' />" style="width: 20%">
 				
 			</div>
 			<div class="wrapper col-12 pt-0">
@@ -55,6 +55,6 @@
 				</table>
 			</div>
 		</main>
-		<link href="<c:url value='/template/web1/css/stylepage-ketqua.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/stylepage-ketqua.css' />" rel="stylesheet" type="text/css" media="all"/>
 </body>
 </html>

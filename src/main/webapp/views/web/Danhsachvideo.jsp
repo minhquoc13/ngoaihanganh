@@ -71,7 +71,8 @@ pageEncoding="UTF-8"%>
 			</div>
 		</main>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<link href="<c:url value='/template/web1/css/stylepage-danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/stylepage-danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/responsive/danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
 		<script>
 			function loadMore() {
 				var amount = document.getElementsByClassName("video").length;
@@ -111,6 +112,5 @@ pageEncoding="UTF-8"%>
 			}
 			
 		</script>
-		<link href="<c:url value='/template/web1/css/responsive/danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
 	</body>
 </html>

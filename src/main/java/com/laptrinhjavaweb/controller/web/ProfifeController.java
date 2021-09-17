@@ -53,7 +53,7 @@ public class ProfifeController extends HttpServlet {
 				userDAO.updateAvatar(id, avatar);
 			}
 		}
-		
+
 		String id = request.getParameter("id");
 		request.setAttribute("user", userDAO.findUserById(id));
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Profile.jsp");

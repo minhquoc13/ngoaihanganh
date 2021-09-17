@@ -1,4 +1,3 @@
-<%@page import="com.laptrinhjavaweb.dao.impl.ResultMatchDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
@@ -61,6 +60,6 @@
 				</table>
 			</div>
 		</main>
-		<link href="<c:url value='/template/web1/css/stylepage-bxh.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/stylepage-bxh.css' />" rel="stylesheet" type="text/css" media="all"/>
 </body>
 </html>

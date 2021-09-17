@@ -74,9 +74,9 @@ pageEncoding="UTF-8"%>
 			</div>
 			</div>
 		</main>
-		<link href="<c:url value='/template/web1/css/stylepage-lichdau.css' />" rel="stylesheet" type="text/css" media="all"/>
-		<link href="<c:url value='/template/web1/css/style-clock.css' />" rel="stylesheet" type="text/css" media="all"/>
-		<link href="<c:url value='/template/web1/css/responsive/lichdau.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/stylepage-lichdau.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/style-clock.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/responsive/lichdau.css' />" rel="stylesheet" type="text/css" media="all"/>
 		<script type="text/javascript">
 		function updateClock(){
 		var now = new Date();

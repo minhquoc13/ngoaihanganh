@@ -6,13 +6,11 @@ pageEncoding="UTF-8"%>
     <head>
         <meta charset="utf-8">
         <title>Trang cá nhân</title>
+        
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <link href="<c:url value='/template/web1/fontawesome-5.15.3/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
-        <link href="<c:url value='template/web1/css/style-prolife.css' />" rel="stylesheet" type="text/css" media="all"/>
+        <link href="<c:url value='/resources/web/fontawesome-5.15.3/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
+        <link href="<c:url value='/resources/web/css/style-prolife.css' />" rel="stylesheet" type="text/css" media="all"/>
         
         <style type="text/css">
         
@@ -50,7 +48,7 @@ pageEncoding="UTF-8"%>
                         <li class="nav-item dropdown">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <c:if test="${user.avatar == NULL or user.avatar == ''}"><img alt="${user.fullName}" src="<c:url value='/template/web1/Images/imguserdefault.png' />"></c:if>
+                                        <c:if test="${user.avatar == NULL or user.avatar == ''}"><img alt="${user.fullName}" src="<c:url value='/resources/web/images/imguserdefault.png' />"></c:if>
                                         <c:if test="${user.avatar != NULL and user.avatar != ''}"><img alt="${user.fullName}" src="${user.avatar}"></c:if>
                                     </span>
                                     <div class="media-body ml-2 d-none d-lg-block">
@@ -98,7 +96,7 @@ pageEncoding="UTF-8"%>
                                 <div class="col-lg-3 order-lg-2">
                                     <div class="card-profile-image">
                                         <a href="${user.avatar}">
-                                            <c:if test="${user.avatar == NULL or user.avatar == ''}"><img class="rounded-circle" alt="${user.fullName}" src="<c:url value='/template/web1/Images/imguserdefault.png' />"></c:if>
+                                            <c:if test="${user.avatar == NULL or user.avatar == ''}"><img class="rounded-circle" alt="${user.fullName}" src="<c:url value='/resources/web/images/imguserdefault.png' />"></c:if>
                                             <c:if test="${user.avatar != NULL and user.avatar != ''}"><img class="rounded-circle" alt="${user.fullName}" src="${user.avatar}"></c:if>
                                         </a>
                                     </div>
@@ -182,7 +180,7 @@ pageEncoding="UTF-8"%>
                                 </div>
                             </div>
                         </div>
-                        <form id="dataUserForm" action="profile" method="post">
+                        <form id="dataUserForm" method="post">
                             <div class="card bg-secondary shadow" id="edit" id="edit" style="display:none;">
                                 <div class="card-header bg-white border-0">
                                     <div class="row align-items-center">
@@ -256,7 +254,7 @@ pageEncoding="UTF-8"%>
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="prolife" method="get">
+                    <form method="post">
                     <div class="modal-body">
                             <div class="form-group">
                                 <div class="col-sm-12">
@@ -289,5 +287,8 @@ pageEncoding="UTF-8"%>
         }
         
         </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>		
