@@ -17,7 +17,7 @@ pageEncoding="UTF-8"%>
 						</div>
 					</div>
 				</div>
-				<div class="social-share">
+				<div class="social-share"> 
 							<a href=""><div class="btn-share"><i class="far fa-share-square"></i>Chia sẻ</div></a>
 				</div>
 			</header>

@@ -1,6 +1,7 @@
 package com.laptrinhjavaweb.controller.web;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +18,7 @@ import com.laptrinhjavaweb.service.INewService;
 
 @WebServlet(urlPatterns = {"/bai-viet"})
 
-public class DetailNewsController extends HttpServlet {
+public class DetailNewController extends HttpServlet {
 
 	@Inject
 	private INewService newService;
@@ -38,6 +39,8 @@ public class DetailNewsController extends HttpServlet {
 		newDAO.AddViewNew(id); // + view
 		request.setAttribute("baiviet", p);
 		request.setAttribute("category", cate.findAll());
+		// set tin lien quan		
+		request.setAttribute("randomNews", newDAO.getTinNgauNhien(id));
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Baiviet.jsp");
 		rd.forward(request, response);
 	}

@@ -90,7 +90,6 @@
         </form>
       </div>
       </div>
-         <link rel="stylesheet" href="<c:url value='/template/admin1/css/editUser.css' />"  />
-      
+         <link rel="stylesheet" href="<c:url value='/resources/admin/css/editUser.css' />" />
 </body>
 </html>

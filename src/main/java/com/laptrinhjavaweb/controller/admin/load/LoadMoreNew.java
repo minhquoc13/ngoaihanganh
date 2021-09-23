@@ -11,13 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.catalina.filters.SetCharacterEncodingFilter;
-
 import com.laptrinhjavaweb.dao.impl.NewDAO;
 import com.laptrinhjavaweb.model.CategoryModel;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.service.ICategoryService;
-import com.laptrinhjavaweb.service.INewService;
 
 @WebServlet(urlPatterns = { "/loadMore-new" })
 public class LoadMoreNew extends HttpServlet {
@@ -68,7 +65,7 @@ public class LoadMoreNew extends HttpServlet {
 	}
 }
 
-protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 	}

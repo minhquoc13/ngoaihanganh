@@ -28,7 +28,6 @@ public interface INewService {
 	
 	List<NewModel> getHeroNew();
 	
-	List<NewModel> get2HeroNew();
 	//video
 	List<NewModel> getAllVideo();
 	

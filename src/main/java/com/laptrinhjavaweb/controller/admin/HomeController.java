@@ -28,10 +28,6 @@ public class HomeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-	
-		
-		
-		
 		chart.chartCategory();
 		request.setAttribute("category", c.findAll());
 		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/home.jsp");

@@ -154,6 +154,6 @@
 			</div>
 			
 		</main>
-		<link href="<c:url value='/template/web1/css/stylepage-dangky.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/stylepage-dangky.css' />" rel="stylesheet" type="text/css" media="all"/>
 </body>
 </html>

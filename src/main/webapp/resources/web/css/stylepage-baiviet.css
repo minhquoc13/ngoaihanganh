@@ -41,13 +41,13 @@
 
 
 .wrapper{
-	padding: 80px 0px 80px 130px ;
+	padding: 80px 0px 90px 130px ;
 }
 
 /*news content*/
 
 .news-section{
-	margin: -60px 0 100px;
+	margin: -60px 0 0;
 }
 .news-section img{
 	width: 100%!important;

@@ -35,6 +35,6 @@
 				<%-- ${video.content} --%>
 			</div>
 		</main>
-		<link href="<c:url value='/template/web1/css/stylepage-video.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/stylepage-video.css' />" rel="stylesheet" type="text/css" media="all"/>
 </body>
 </html>

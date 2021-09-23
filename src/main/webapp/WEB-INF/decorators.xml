@@ -14,6 +14,10 @@
         <pattern>/*</pattern>
     </decorator>
     
+    <decorator name="bai-viet" page="">
+        <pattern>/bai-viet*</pattern>
+    </decorator>
+    
     <decorator name="login" page="login.jsp">
         <pattern>/dang-nhap</pattern>
     </decorator>

@@ -87,11 +87,6 @@ public class NewService implements INewService {
 	public List<NewModel> getHeroNew() {
 		return newDao.getHeroNew();
 	}
-
-	@Override
-	public List<NewModel> get2HeroNew() {
-		return newDao.get2HeroNew();
-	}
 	
 	@Override
 	public List<NewModel> getAllVideo() {
@@ -107,6 +102,7 @@ public class NewService implements INewService {
 	public List<NewModel> get4Video() {
 		return newDao.get4Video();
 	}
+
 
 
 

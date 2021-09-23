@@ -28,9 +28,7 @@ public interface INewDAO extends GenericDAO<NewModel> {
 	List <NewModel> get4New();
 	
 	List<NewModel> getHeroNew();
-	
-	List<NewModel> get2HeroNew();
-	
+		
 	//video
 	List<NewModel> getAllVideo();
 	

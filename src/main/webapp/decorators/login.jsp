@@ -4,14 +4,14 @@
 <html>
 	<head>
 		<title><dec:title default="Đăng nhập" /></title>
-		<link href="<c:url value='template/admin1/css/styles.css' />" rel="stylesheet" type="text/css" media="all"/>
-		<link href="<c:url value='/template/web1/fontawesome-5.15.3/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/admin/css/styles.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/fontawesome-5.15.3/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
 		<!-- SDK Facebook -->
 		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=390908026024049&autoLogAppEvents=1" nonce="5VtW4E02"></script>
 	</head>
 	<style>
 		#layoutAuthentication_content{
-			background-image: url(<c:url value='/template/web1/Images/2746E906-F87C-4764-8CE8-E5F1EF18EAA9.jpg' />);
+			background-image: url(<c:url value='/resources/web/images/2746E906-F87C-4764-8CE8-E5F1EF18EAA9.jpg' />);
 			background-size: cover;
 		}
 		.trangchu{

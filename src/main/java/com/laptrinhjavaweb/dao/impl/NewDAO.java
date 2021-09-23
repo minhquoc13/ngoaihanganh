@@ -103,13 +103,7 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 
 	@Override
 	public List<NewModel> getHeroNew() {
-		String sql = "select * from news where categoryid != 8 and rate = 1 order by id desc limit 1";
-		return query(sql, new NewMapper());
-	}
-
-	@Override
-	public List<NewModel> get2HeroNew() {
-		String sql = "select * from news where categoryid != 8 and rate = 1 order by id desc limit 1, 2";
+		String sql = "select * from news where categoryid != 8 and rate = 1 order by id desc limit 3";
 		return query(sql, new NewMapper());
 	}
 
@@ -123,6 +117,10 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		return query(sql, new NewMapper()).get(0);
 	}
 
+	public List<NewModel> getTinNgauNhien(Long id) {
+		String sql = "select * from news where categoryid != 8 and id != ? order by RAND() limit 4";
+		return query(sql, new NewMapper(), id);
+	}
 	@Override
 	public List<NewModel> getAllVideo() {
 		String sql = "select * from news where categoryid = 8 order by id desc";
@@ -147,7 +145,7 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		NewModel n = news.get(0);
 		return n;
 	}
-
+	
 //	public void AddViewNew(String id) {
 //		Connection connection = null;
 //		PreparedStatement statement = null;

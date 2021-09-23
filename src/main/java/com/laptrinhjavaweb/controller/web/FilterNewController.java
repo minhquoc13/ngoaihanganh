@@ -28,8 +28,7 @@ public class FilterNewController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String cid1 = request.getParameter("cid");
-		Long cid = Long.parseLong(cid1);
+		Long cid = Long.parseLong(request.getParameter("cid"));
 		if(cid != 0){
 			List<NewModel> filterNew = newService.findByCategoryId(cid);
 			request.setAttribute("allnews", filterNew);

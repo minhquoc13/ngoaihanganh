@@ -4,8 +4,7 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Trang chủ</title>
+		<title>Trang chủ | Ngoại hạng Anh</title>
 	</head>
 	<body>
 		<div class="main">
@@ -30,7 +29,7 @@ pageEncoding="UTF-8"%>
 					<div class="colleft bg-white mr-auto ml-auto mt-4" id="result">
 						<div class="header">
 							<h6 class="text-center">Tuần ${lastweek.week}</h6>
-							<h5 class="text-center">Premier<img src="<c:url value='/template/web1/Images/logo.png' />">League</h5>
+							<h5 class="text-center">Premier<img src="<c:url value='/resources/web/images/logo.png' />">League</h5>
 						</div>
 						<div class="day">
 							<div class="3ketqua">
@@ -95,7 +94,7 @@ pageEncoding="UTF-8"%>
 				<div class="colmid col-lg-9">
 
 					<div class="hero">
-						<c:forEach items="${heroNew}" var="n">
+						<c:forEach items="${heroNew}" begin="0" end="0" var="n">
 						<h3 class="text-left">Tin nổi bật</h3>
 						<div class="hero-playlist">
 							<figure class="hero1">
@@ -115,7 +114,7 @@ pageEncoding="UTF-8"%>
 								</figcaption>
 							</figure>
 							<div class="hero-tinnoibat">
-								<c:forEach items="${new2}" var="n2">
+								<c:forEach items="${heroNew}" begin="1" end="2" var="n2">
 								<div class="hero-chienthuat col-lg-6 col-sm-12 pb-1">
 									<a href="bai-viet?id=${n2.id}">
 										<figure class="hero2">
@@ -221,43 +220,35 @@ pageEncoding="UTF-8"%>
 					</div>
 				</div>
 			</div>
-			<link href="<c:url value='/template/web1/css/style-clock.css' />" rel="stylesheet" type="text/css" media="all"/>
-			<script type="text/javascript">
-			function updateClock(){
-			var now = new Date();
-			var dname = now.getDay(),
-			mo = now.getMonth(),
-			dnum = now.getDate(),
-			yr = now.getFullYear(),
-			hou = now.getHours(),
-			min = now.getMinutes(),
-			sec = now.getSeconds(),
-			pe = "AM";
-				
-			if(hou >= 12){
-			pe = "PM";
-			}
-			if(hou == 0){
-			hou = 12;
-			}
-			if(hou > 12){
-			hou = hou - 12;
-			}
-			Number.prototype.pad = function(digits){
-			for(var n = this.toString(); n.length < digits; n = 0 + n);
-			return n;
-			}
-			var months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-			var week = ["Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"];
-			var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
-			var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
-			for(var i = 0; i < ids.length; i++)
-			document.getElementById(ids[i]).firstChild.nodeValue = values[i];
-			}
-			function initClock(){
-			updateClock();
-			window.setInterval("updateClock()", 1);
-			}
-			</script>
+			<!-- Messenger Plugin chat Code -->
+		    <div id="fb-root"></div>
+		
+		    <!-- Your Plugin chat code -->
+		    <div id="fb-customer-chat" class="fb-customerchat">
+		    </div>
+			
+		    <script>
+		      var chatbox = document.getElementById('fb-customer-chat');
+		      chatbox.setAttribute("page_id", "101052108935146");
+		      chatbox.setAttribute("attribution", "biz_inbox");
+		
+		      window.fbAsyncInit = function() {
+		        FB.init({
+		          xfbml            : true,
+		          version          : 'v12.0'
+		        });
+		      };
+		
+		      (function(d, s, id) {
+		        var js, fjs = d.getElementsByTagName(s)[0];
+		        if (d.getElementById(id)) return;
+		        js = d.createElement(s); js.id = id;
+		        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+		        fjs.parentNode.insertBefore(js, fjs);
+		      }(document, 'script', 'facebook-jssdk'));
+		    </script>
+		    
+			<link href="<c:url value='/resources/web/css/style-clock.css' />" rel="stylesheet" type="text/css" media="all"/>
+			<script type="text/javascript" src="<c:url value='/resources/web/js/clock.js' />"></script>
 		</body>
 	</html>

@@ -104,8 +104,7 @@ public class HomeController extends HttpServlet {
 			//set tin lien quan
 			request.setAttribute("tcd", newDao.getTinCongDong()); // tin cong dong
 			request.setAttribute("tcn", newDao.getTinChuyenNhuong()); // tin chuyen nhuong
-			List<NewModel> heroNew2 = newService.get2HeroNew();
-			request.setAttribute("new2", heroNew2);
+
 			// set news
 			List<NewModel> newsList = newService.get4New();
 			request.setAttribute("news4", newsList);  

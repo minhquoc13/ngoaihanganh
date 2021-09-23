@@ -86,18 +86,22 @@ pageEncoding="UTF-8"%>
 			</main>
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-			<link href="<c:url value='/template/web1/css/stylepage-danhsachbaiviet.css' />" rel="stylesheet" type="text/css" media="all" />			
-		    <link href="<c:url value='/template/web1/css/responsive/danhsachbaiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
+			<link href="<c:url value='/resources/web/css/stylepage-danhsachbaiviet.css' />" rel="stylesheet" type="text/css" media="all" />			
+		    <link href="<c:url value='/resources/web/css/responsive/danhsachbaiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
 			<script>
+			var url = window.location.hostname;
+			console.log(url);
 			function loadMore() {
 				var amount = document.getElementsByClassName("new").length;
 				$.ajax({
 					url: "/new-jdbc-12-month-2018/loadMore-new",
 					type: "get",
 					data:{
-						exits: amount
+						exits: amount,
+						action: "loadMore"
 					},
 					success : function(data) {
+						console.log(data)
 						var row = document.getElementById("content");
 						row.innerHTML += data;
 					},

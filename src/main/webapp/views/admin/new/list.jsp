@@ -144,6 +144,6 @@
 		        });
 		    }
 		</script>
-		<link rel="stylesheet" href="<c:url value='/template/admin1/css/styleNew.css' />"  />
+		<link rel="stylesheet" href="<c:url value='/resources/admin/css/styleNew.css' />"  />
 	</body>
 </html>

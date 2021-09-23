@@ -151,6 +151,11 @@ pageEncoding="UTF-8"%>
 				</div>
 			</div>
 		</main>
+		<script src="<c:url value='/resources/admin/assets/demo/chart-area-demo.js' />"></script>
+	    <script src="<c:url value='/resources/admin/assets/demo/chart-bar-demo.js' />"></script>
+	    <script src="<c:url value='/resources/admin/assets/demo/chart-pie-demo.js' />"></script> 
+	    <script src="<c:url value='/resources/admin/assets/demo/datatables-demo.js' />"></script>
+	    <script src="<c:url value='/resources/admin/js/datatables-simple-demo.js' />"></script>
 		<script type="text/javascript">
 		var ctx = document.getElementById("PieChart");
 		var myPieChart = new Chart(ctx, {
@@ -163,6 +168,8 @@ pageEncoding="UTF-8"%>
 		}],
 		},
 		});
+		
+		
 		</script>
 		<script type="text/javascript">
 		var nowDate = new Date(); //YYYY-MM-DD
@@ -234,6 +241,7 @@ pageEncoding="UTF-8"%>
 		}
 		}
 		});
+		
 		</script>
 	</body>
 </html>
