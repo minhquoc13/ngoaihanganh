@@ -122,14 +122,15 @@ flex: 100%;
 max-width: 100%;
 }
 .footer-dark{
-padding: 13px 0px 5px;
+padding: 13px 0px 15px;
 }
 .footer-dark .copyright{
 padding-top: 10px;
 }
 footer .row{
-	flex-wrap: unset;
+	text-align: center;
 }
+
 }
 
 

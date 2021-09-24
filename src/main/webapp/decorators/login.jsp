@@ -4,6 +4,10 @@
 <html>
 	<head>
 		<title><dec:title default="Đăng nhập" /></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset='utf-8'>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="<c:url value='/resources/admin/css/styles.css' />" rel="stylesheet" type="text/css" media="all"/>
 		<link href="<c:url value='/resources/web/fontawesome-5.15.3/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
 		<!-- SDK Facebook -->

@@ -3,7 +3,7 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 item">
+                <div class="col-md-3 item mb-sm-2">
                     <a class="text-white" href="trang-chu"><h3>Trang chủ</h3></a>
                     <ul>
                         <li><a href="tin-tuc">Tin tức</a></li>
@@ -13,7 +13,7 @@
                         <li><a href="#">...</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 item">
+                <div class="col-md-3 item mb-sm-2">
                     <h3>Về chúng tôi</h3>
                     <ul>
                         <li><a href="#">Giới thiệu</a></li>
@@ -21,7 +21,7 @@
                         <li><a href="#">Liên hệ quảng cáo</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 item">
+                <div class="col-md-3 item mb-sm-2">
                     <h3>Địa chỉ</h3>
                     <ul>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Đại Quang- Đại Lộc- Quảng Nam</a></li>
@@ -29,7 +29,7 @@
                         <!-- <li><a href="#">Hosting</a></li> -->
                     </ul>
                 </div>
-                <div class="col-md-3 item">
+                <div class="col-md-3 item mb-sm-2">
                     <h3>ngoaihanganh.com</h3>
                     <p>Website bản tin về Ngoại hạng Anh, liên tục cập nhật những thông tin mới nhất đến độc giả.</p>
                 </div>

@@ -4,6 +4,7 @@
 <html lang="vi">
 <head>
 	<meta property="fb:app_id" content="&#123;YOUR_APP_ID&#125;" />
+	<meta name="robots" content="noindex, nofollow" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:title" content="Ngoại hạng Anh">

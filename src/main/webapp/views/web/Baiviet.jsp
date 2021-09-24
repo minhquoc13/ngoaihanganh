@@ -4,7 +4,9 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<meta name="keywords" content="text"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content=""/>
+		<meta name="author" content="Mink Quoc">
 		<meta id="meta-location" property="og:url" content="" />
 		<meta property="og:type"        content="article" />
 		<meta property="og:title"       content="${baiviet.title}" />
