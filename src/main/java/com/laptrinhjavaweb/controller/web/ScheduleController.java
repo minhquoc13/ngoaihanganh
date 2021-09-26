@@ -26,20 +26,18 @@ public class ScheduleController extends HttpServlet {
 	private ScheduleDAO scheduleDAO;
 	@Inject
 	private InfoTeamDAO infoTeamDAO;
-	@Inject 
-	private ResultMatchDAO rsDao;
 
 	private static final long serialVersionUID = 2686801510274002166L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		List<ScheduleModel> listS = scheduleDAO.getAll();
+		int weekToDisplay = scheduleDAO.getWeekToDisplay();
+		List<ScheduleModel> listS = scheduleDAO.getScheduleByWeek(weekToDisplay);
 		List<InfoTeamModel> listI = infoTeamDAO.findAll();
-		ResultMatchModel lastweek = rsDao.getLastWeek();
 		request.setAttribute("info", listI);
 		request.setAttribute("schedule", listS);
-		request.setAttribute("lastweek", lastweek);
+		request.setAttribute("weekToDisplay", weekToDisplay);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Lichdau.jsp");
 		rd.forward(request, response);
 	}

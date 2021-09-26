@@ -120,14 +120,14 @@ pageEncoding="UTF-8"%>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label no-padding-right">Ngày thi đấu</label>
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="thumbnail" name="matchDate"/>
+                                    <input type="date" class="form-control" id="thumbnail" name="matchDate"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">Giờ thi đấu</label>
                                 <div class="col-sm-12">
                                    <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="title" name="matchTime"/>
+                                    <input type="time" class="form-control" id="title" name="matchTime"/>
                                 </div>
                                 </div>
                             </div>

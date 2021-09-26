@@ -1,6 +1,9 @@
+<%@page import="com.laptrinhjavaweb.model.UserModel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
+<%@ page import="com.*, com.laptrinhjavaweb.dao.impl.*,java.util.List"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,11 +51,32 @@
 							<td>${b.gd}</td>
 							<td>${b.totalScore}</td>
 							<td class="text-center">
-								<li class="btn-win">W</li>
+								<!-- <li class="btn-win">W</li>
 								<li class="btn-lost">L</li>
 								<li class="btn-draw">D</li>
 								<li class="btn-win">W</li>
-								<li class="btn-win">W</li>
+								<li class="btn-win">W</li> -->
+							 
+							 <c:forEach items="${info}" var="i"><c:if test="${b.teamName == i.teamName}">
+							 <c:set var="teamName" value="${i.shortName}" />
+							 </c:if></c:forEach>	
+							 <%-- <c:out value = "${teamName}"/> --%>
+							 ${val1}
+								<% 
+									ResultMatchDAO rsDAO = new ResultMatchDAO();
+									String teamName = (String)pageContext.getAttribute("teamName"); 
+									List<String> list = rsDAO.RecentResultOneTeam(teamName);
+									int i = 0;
+									for(String s : list){
+										if(s == "W") {
+											out.println("<li class="+"btn-win"+">W</li>");
+										} else if (s == "D") {
+											out.println("<li class="+"btn-draw"+">D</li>");
+										} else out.println("<li class="+"btn-lost"+">L</li>");
+										i++;
+										if(i == 5) break;
+									}
+								%>
 							</td>
 						</tr>
 						</c:forEach>

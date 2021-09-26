@@ -37,6 +37,11 @@
 	padding: 3px;
 }
 
+.datetime{
+	border-radius: 20px!important;
+}
+
+
 /*table content*/
 table{
 	display: table;

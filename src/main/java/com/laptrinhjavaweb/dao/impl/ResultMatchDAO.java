@@ -2,12 +2,16 @@ package com.laptrinhjavaweb.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.laptrinhjavaweb.mapper.ResultMatchMapper;
+import com.laptrinhjavaweb.model.InfoTeamModel;
 import com.laptrinhjavaweb.model.ResultMatchModel;
+
 
 public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 
@@ -18,11 +22,11 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 		return query(sql, new ResultMatchMapper());
 	}
 
-	public List<ResultMatchModel> getByWeek() {
-		String sql = "select r.id, s.week, s.matchdate, s.matchtime, s.team1, \r\n"
-				+ "r.goal1, s.team2, r.goal2, s.stadium\r\n"
-				+ "from schedule as s inner join resultmatch as r on s.week = r.week where s.team1 = r.team1 and s.team2 = r.team2";
-		return query(sql, new ResultMatchMapper());
+	public List<ResultMatchModel> getByWeek(int week) {
+		String sql = "select r.id, s.week, s.matchdate, s.matchtime, s.team1,\r\n"
+				+ "				r.goal1, s.team2, r.goal2, s.stadium\r\n"
+				+ "				from schedule as s inner join resultmatch as r on s.team1 = r.team1 and s.team2 = r.team2 and r.week = ?";
+		return query(sql, new ResultMatchMapper(), week);
 	}
 
 	public ResultMatchModel getLastWeek() {
@@ -34,6 +38,36 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 
 	}
 
+	public int getWeekToDisplay() {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		int week = 0;
+		String sql = "select * from week";
+		try {
+			connection = getConnection();
+			statement = connection.prepareStatement(sql);
+			resultSet = statement.executeQuery(sql);
+			 while(resultSet.next()){
+				 week = resultSet.getInt("weekResultMatch");
+		         }
+			return week;
+		} catch (SQLException e) {
+
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (SQLException e) {
+			}
+		}
+		return week;
+	}
+
 	public ResultMatchModel findMatchById(String id) {
 		String sql = "select r.id, s.week, s.matchdate, s.matchtime, s.team1, \r\n"
 				+ "r.goal1, s.team2, r.goal2, s.stadium\r\n"
@@ -41,7 +75,7 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 		List<ResultMatchModel> l = query(sql, new ResultMatchMapper(), id);
 		return l.isEmpty() ? null : l.get(0);
 	}
-	
+
 	public void AddResultMatch(String week, String team1, String goal1, String team2, String goal2) {
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -95,6 +129,12 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 			}
 		}
 	}
+	
+	public void updatePlayedMatch() {
+		String sql = "update schedule as s inner join resultmatch as r on s.team1 = r.team1 and s.team2 = r.team2\r\n"
+				+ "set s.played = 1 ";
+		update(sql);
+	}
 
 	public void DeleteResultMatch(Long id) {
 		String sql = "Delete from resultmatch where id = ?";
@@ -110,7 +150,8 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 			return list.get(0);
 		}
 	}
-
+	
+	
 	public List<ResultMatchModel> getByClb(String teamName) {
 		String sql = "select r.id, s.week, s.matchdate, s.matchtime, s.team1,\r\n"
 				+ "				r.goal1, s.team2, r.goal2, s.stadium\r\n"
@@ -119,29 +160,45 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 		return query(sql, new ResultMatchMapper(), teamName, teamName);
 	}
 
-	public List<String> KetQuaGanDay(String teamName) {
+	public List<String> RecentResultOneTeam(String teamName) {
 		ResultMatchDAO dao = new ResultMatchDAO();
 		List<String> list = new ArrayList<>();
 		List<ResultMatchModel> listRs = dao.getByClb(teamName);
-		for(ResultMatchModel r : listRs) {
-			if(r.getTeam1().equals(teamName) && r.getGoal1() > r.getGoal2()) {
+		for (ResultMatchModel r : listRs) {
+			if (r.getTeam1().equals(teamName) && r.getGoal1() > r.getGoal2()) {
 				list.add("W");
-			} else if(r.getTeam1().equals(teamName) && r.getGoal1() < r.getGoal2()) {
+			} else if (r.getTeam1().equals(teamName) && r.getGoal1() < r.getGoal2()) {
 				list.add("L");
-			} if(r.getTeam2().equals(teamName) && r.getGoal2() > r.getGoal1()) {
+			}
+			else if (r.getTeam2().equals(teamName) && r.getGoal2() > r.getGoal1()) {
 				list.add("W");
-			} if(r.getTeam2().equals(teamName) && r.getGoal2() < r.getGoal1()) {
+			}
+			else if (r.getTeam2().equals(teamName) && r.getGoal2() < r.getGoal1()) {
 				list.add("L");
-			} else if(r.getGoal1() == r.getGoal2()) {
+			} else if (r.getGoal1() == r.getGoal2()) {
 				list.add("D");
-			}		
+			}
 		}
+		Collections.reverse(list);
 		return list;
+	}
+	
+	public List<List<String>> getRecentResultOfAllClub(){
+		ResultMatchDAO dao = new ResultMatchDAO();
+		InfoTeamDAO infoTeamDAO = new InfoTeamDAO();
+		List<List<String>> arrayRecentResult = new ArrayList<List<String>>();
+		List<InfoTeamModel> listClb = infoTeamDAO.findAll();
+		for(InfoTeamModel clb : listClb) {
+			arrayRecentResult.add(dao.RecentResultOneTeam(clb.getShortName()));
+		}
+		return arrayRecentResult;
 	}
 
 	public static void main(String[] args) {
 		ResultMatchDAO dao = new ResultMatchDAO();
-		List<String> listRs = dao.KetQuaGanDay("LIV");
+		List<String> listRs = dao.RecentResultOneTeam("LIV");
 		System.out.print(listRs);
+		System.out.print(dao.getWeekToDisplay());
+		System.out.print(dao.getRecentResultOfAllClub());
 	}
 }

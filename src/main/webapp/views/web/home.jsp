@@ -28,14 +28,13 @@ pageEncoding="UTF-8"%>
 					</div>
 					<div class="colleft bg-white mr-auto ml-auto mt-4" id="result">
 						<div class="header">
-							<h6 class="text-center">Tuần ${lastweek.week}</h6>
+							<h6 class="text-center">Tuần ${weekToDisplay}</h6>
 							<h5 class="text-center">Premier<img src="<c:url value='/resources/web/images/logo.png' />">League</h5>
 						</div>
 						<div class="day">
 							<div class="3ketqua">
 								<ul class="list-group">
 									<c:forEach items="${resultMatch}" var="r">
-									<c:if test="${r.week == lastweek.week}">
 									<a href="" class="matchAbridged">
 										<span class="teamName">${r.team1}</span>
 										<span class="clb-img"><c:forEach items="${info}" var="i"><c:if test="${r.team1 == i.shortName}"><img src="${i.thumbnail}"></c:if></c:forEach></span>
@@ -47,7 +46,6 @@ pageEncoding="UTF-8"%>
 										<span class="clb-img"><c:forEach items="${info}" var="i"><c:if test="${r.team2 == i.shortName}"><img src="${i.thumbnail}"></c:if></c:forEach></span>
 										<span class="teamName">${r.team2}</span>
 									</a>
-									</c:if>
 									</c:forEach>
 								</ul>
 							</div>

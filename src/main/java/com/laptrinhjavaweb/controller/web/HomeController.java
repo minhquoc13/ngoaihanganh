@@ -90,12 +90,12 @@ public class HomeController extends HttpServlet {
 			request.setAttribute("info", info);
 			// set category
 			request.setAttribute("category", categoryService.findAll());
-			// set rs match
-			ResultMatchModel w = resultMatchDAO.getLastWeek();
-			request.setAttribute("lastweek", w); 
 			// set last week
-			List<ResultMatchModel> listrs = resultMatchDAO.getByWeek();
-			request.setAttribute("resultMatch", listrs);
+			int week = resultMatchDAO.getWeekToDisplay();
+			request.setAttribute("weekToDisplay", week);
+			// set rs match
+			List<ResultMatchModel> listResult = resultMatchDAO.getByWeek(week);
+			request.setAttribute("resultMatch", listResult);
 			// set bxh
 			request.setAttribute("bxh", bxhDAO.getAll());
 			// set heronew

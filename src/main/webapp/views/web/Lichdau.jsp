@@ -19,7 +19,7 @@ pageEncoding="UTF-8"%>
 			</header>
 			<div class="wrapper">
 			<div class="pt-0 pb-3 container-fluid">
-				<h3 class="week m-auto">Tuần ${lastweek.week}</h3>
+				<h3 class="week m-auto">Tuần ${weekToDisplay}</h3>
 				<div class="datetime m-auto">
 					<div class="date">
 						<span id="dayname">Day</span>,
@@ -47,7 +47,6 @@ pageEncoding="UTF-8"%>
 					</thead>
 					<tbody>
 						<c:forEach items="${schedule}" var="s">
-						<c:if test="${s.week == lastweek.week}">
 						<tr>
 							<th scope="row">${s.matchDate}</th>
 							<td>${s.matchTime }</td>
@@ -67,8 +66,8 @@ pageEncoding="UTF-8"%>
 							</td>
 							<c:forEach items="${info}" var="i"><c:if test="${s.team1 == i.shortName}"><td>${i.stadium}</td></c:if></c:forEach>
 						</tr>
-						</c:if>
 						</c:forEach>
+						
 					</tbody>
 				</table>
 			</div>

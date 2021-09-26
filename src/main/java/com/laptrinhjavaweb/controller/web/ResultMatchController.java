@@ -30,7 +30,8 @@ public class ResultMatchController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		List<ResultMatchModel> listR = resultMatchDAO.getByWeek();
+		int week = resultMatchDAO.getWeekToDisplay();
+		List<ResultMatchModel> listR = resultMatchDAO.getByWeek(week);
 		List<InfoTeamModel> listI = infoTeamDAO.findAll();
 		request.setAttribute("info", listI);
 		request.setAttribute("resultmatch", listR);
