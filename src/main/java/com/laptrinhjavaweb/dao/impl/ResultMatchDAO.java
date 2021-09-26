@@ -132,7 +132,7 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 	
 	public void updatePlayedMatch() {
 		String sql = "update schedule as s inner join resultmatch as r on s.team1 = r.team1 and s.team2 = r.team2\r\n"
-				+ "set s.played = 1 ";
+				+ "set s.played = 1";
 		update(sql);
 	}
 

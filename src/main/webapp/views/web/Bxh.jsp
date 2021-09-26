@@ -56,7 +56,6 @@
 								<li class="btn-draw">D</li>
 								<li class="btn-win">W</li>
 								<li class="btn-win">W</li> -->
-							 
 							 <c:forEach items="${info}" var="i"><c:if test="${b.teamName == i.teamName}">
 							 <c:set var="teamName" value="${i.shortName}" />
 							 </c:if></c:forEach>	
