@@ -1,7 +1,6 @@
 package com.laptrinhjavaweb.controller.web;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -16,7 +15,7 @@ import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.service.ICategoryService;
 import com.laptrinhjavaweb.service.INewService;
 
-@WebServlet(urlPatterns = {"/bai-viet"})
+@WebServlet(urlPatterns = {"/bai-viet/*"})
 
 public class DetailNewController extends HttpServlet {
 
@@ -34,15 +33,20 @@ public class DetailNewController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		Long id = Long.parseLong(request.getParameter("id"));
-		NewModel p = newService.findOne(id);
-		newDAO.AddViewNew(id); // + view
-		request.setAttribute("baiviet", p);
-		request.setAttribute("category", cate.findAll());
-		// set tin lien quan		
-		request.setAttribute("randomNews", newDAO.getTinNgauNhien(id));
-		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Baiviet.jsp");
-		rd.forward(request, response);
+		try {
+			String slug = request.getParameter("slug");
+			NewModel news = newDAO.findNewBySlug(slug);
+			newDAO.AddViewNew(news.getId()); // + view
+			request.setAttribute("baiviet", news);
+			request.setAttribute("category", cate.findAll());
+			// set tin lien quan		
+			request.setAttribute("randomNews", newDAO.getTinNgauNhien(news.getId()));
+			RequestDispatcher rd = request.getRequestDispatcher("/views/web/Baiviet.jsp");
+			rd.forward(request, response);
+		} catch (Exception e) {
+			response.sendRedirect(request.getContextPath()+"/tin-tuc");
+		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.github.slugify.Slugify;
 import com.laptrinhjavaweb.mapper.ResultMatchMapper;
 import com.laptrinhjavaweb.model.InfoTeamModel;
 import com.laptrinhjavaweb.model.ResultMatchModel;
@@ -195,10 +196,13 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 	}
 
 	public static void main(String[] args) {
-		ResultMatchDAO dao = new ResultMatchDAO();
-		List<String> listRs = dao.RecentResultOneTeam("LIV");
-		System.out.print(listRs);
-		System.out.print(dao.getWeekToDisplay());
-		System.out.print(dao.getRecentResultOfAllClub());
+		/*
+		 * ResultMatchDAO dao = new ResultMatchDAO(); List<String> listRs =
+		 * dao.RecentResultOneTeam("LIV"); System.out.print(listRs);
+		 * System.out.print(dao.getWeekToDisplay());
+		 */
+		Slugify slg = new Slugify().withTransliterator(true).withUnderscoreSeparator(true);
+		String result = slg.slugify("Italia vs Lukaku: Màn đối đầu với con quái vật mà mình nuôi nấng");
+		System.out.print(result);
 	}
 }

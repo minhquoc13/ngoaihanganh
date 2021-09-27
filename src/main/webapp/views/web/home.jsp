@@ -96,7 +96,7 @@ pageEncoding="UTF-8"%>
 						<h3 class="text-left">Tin nổi bật</h3>
 						<div class="hero-playlist">
 							<figure class="hero1">
-								<a href="bai-viet?id=${n.id}" class="hero1-a"><img src="${n.thumbnail}" class="img"></a>
+								<a href="bai-viet/?slug=${n.slug}" class="hero1-a"><img alt="${n.title}" src="${n.thumbnail}" class="img"></a>
 								
 								<figcaption>
 								<h2><a href="bai-viet?id=${n.id}">${n.title}</a></h2>

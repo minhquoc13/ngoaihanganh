@@ -16,6 +16,11 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		String sql = "SELECT * FROM news WHERE categoryid = ?";
 		return query(sql, new NewMapper(), categoryId);
 	}
+	
+	public NewModel findNewBySlug(String slug) {
+		String sql = "SELECT * FROM news WHERE slug = ?";
+		return query(sql, new NewMapper(), slug).get(0);
+	}
 
 	@Override
 	public Long save(NewModel newModel) {
