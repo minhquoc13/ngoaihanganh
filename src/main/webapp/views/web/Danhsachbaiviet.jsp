@@ -61,7 +61,7 @@ pageEncoding="UTF-8"%>
 					<li class="new">
 						<section>
 							<div class="col-12 p-0 m-0">
-								<a href="bai-viet?id=${o.id}">
+								<a href="bai-viet/${o.slug}">
 									<figure>
 										<span class="thumbnail"> <img src="${o.thumbnail}">
 										</span>

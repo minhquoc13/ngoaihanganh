@@ -96,25 +96,25 @@ pageEncoding="UTF-8"%>
 						<h3 class="text-left">Tin nổi bật</h3>
 						<div class="hero-playlist">
 							<figure class="hero1">
-								<a href="bai-viet/?slug=${n.slug}" class="hero1-a"><img alt="${n.title}" src="${n.thumbnail}" class="img"></a>
+								<a href="bai-viet/${n.slug}" class="hero1-a"><img alt="${n.title}" src="${n.thumbnail}" class="img"></a>
 								
 								<figcaption>
-								<h2><a href="bai-viet?id=${n.id}">${n.title}</a></h2>
+								<h2><a href="bai-viet/${n.slug}">${n.title}</a></h2>
 								<p>${n.shortDescription}</p>
 								</c:forEach>
 								
 								<h5>Tin liên quan</h5>
 								<div class="tinlienquan">
-									<a href="bai-viet?id=${tcd.id}"><i class="far fa-newspaper"></i>${tcd.title}</a>
-									<a href="bai-viet?id=${tcn.id}"><i class="fas fa-comment-dollar"></i>${tcn.title}</a>
-									<c:forEach items="${heroVideo}" var="h"><a href="watch_video?vid=${h.id}"><i class="fas fa-play"></i>${h.title}</a></c:forEach>
+									<a href="bai-viet/${tcd.slug}"><i class="far fa-newspaper"></i>${tcd.title}</a>
+									<a href="bai-viet/${tcn.slug}"><i class="fas fa-comment-dollar"></i>${tcn.title}</a>
+									<c:forEach items="${heroVideo}" var="h"><a href="watch_video/${h.slug}"><i class="fas fa-play"></i>${h.title}</a></c:forEach>
 								</div>
 								</figcaption>
 							</figure>
 							<div class="hero-tinnoibat">
 								<c:forEach items="${heroNew}" begin="1" end="2" var="n2">
 								<div class="hero-chienthuat col-lg-6 col-sm-12 pb-1">
-									<a href="bai-viet?id=${n2.id}">
+									<a href="bai-viet/${n2.slug}">
 										<figure class="hero2">
 											<span class="thumbnail">
 												<img src="${n2.thumbnail}" class="img">
@@ -145,7 +145,7 @@ pageEncoding="UTF-8"%>
 							<div class="row m-0 mt-3 list-new">
 								<c:forEach items="${news4}" var="n">
 								<div class="col-3 pl-0" style="padding-right: 7px;">
-									<a href="bai-viet?id=${n.id}">
+									<a href="bai-viet/${n.slug}">
 										<figure>
 											<span class="thumbnail">
 												<img src="${n.thumbnail}" class="img">
@@ -176,7 +176,7 @@ pageEncoding="UTF-8"%>
 								<div class="row p-0">
 									<c:forEach items="${heroVideo}" var="h">
 									<div class="video-main col-6 p-0">
-										<a href="watch_video?vid=${h.id}">
+										<a href="watch_video/${h.slug}">
 											<figure>
 												<span class="thumbnail">
 													<img src="${h.thumbnail}" class="img">
@@ -194,7 +194,7 @@ pageEncoding="UTF-8"%>
 										<div class="row m-0">
 											<c:forEach items="${video4}" var="v4">
 											<div class="col-6 pr-0" style="padding-left: 7px;">
-												<a href="watch_video?vid=${v4.id}">
+												<a href="watch_video/${v4.slug}">
 													<figure>
 														<span class="thumbnail">
 															<img src="${v4.thumbnail}" class="img">

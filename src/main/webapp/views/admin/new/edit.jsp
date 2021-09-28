@@ -10,7 +10,12 @@
 <body>
 <div class="main-content">
     <div class="main-content-inner">
+    <c:if test="${empty model.categoryCode}">
+ 	<div class="pt-2"><h4 class="text-center">Tạo bài viết</h4></div>
+ 	</c:if>
+ 	<c:if test="${not empty model.categoryCode}">
  	<div class="pt-2"><h4 class="text-center">Chỉnh sửa bài viết</h4></div>
+ 	</c:if>
         <div class="page-content">
             <div class="col-9 m-auto">
                 <div class="col-xs-12">
@@ -25,7 +30,7 @@
                                 <div class="col-sm-12">
                                     <select class="form-control" id="categoryCode" name="categoryCode">
                                         <c:if test="${empty model.categoryCode}">
-                                            <option value="">Chọn loại bài viết</option>
+                                            <option value="">Chọn thể loại bài viết</option>
                                             <c:forEach var="item" items="${categories}">
                                                 <option value="${item.code}">${item.name}</option>
                                             </c:forEach>
@@ -128,7 +133,7 @@
             	window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=insert_success";
             },
             error: function (error) {
-            	window.location.href = "${NewURL}?type=list&maxPageItem=7&page=1&message=error_system";
+            	window.location.href = "${NewURL}?type=list&maxPageItem=7&page=1&sortName=id&sortBy=desc&message=error_system";
             }
         });
     }
@@ -143,7 +148,7 @@
             	window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=update_success";
             },
             error: function (error) {
-            	window.location.href = "${NewURL}?type=list&maxPageItem=7&page=1&message=error_system";
+            	window.location.href = "${NewURL}?type=list&page=1&maxPageItem=7&sortName=id&sortBy=desc&message=error_system";
             }
         });
     }

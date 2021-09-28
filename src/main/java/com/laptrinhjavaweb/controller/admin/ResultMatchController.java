@@ -37,8 +37,6 @@ public class ResultMatchController extends HttpServlet {
 		
 		if (action != null) {			
 			String week = request.getParameter("week");
-			String matchDate = request.getParameter("matchDate");
-			String matchTime = request.getParameter("matchTime");
 			String team1 = request.getParameter("team1");
 			String team2 = request.getParameter("team2");
 			String goal1 = request.getParameter("goal1");

@@ -203,6 +203,6 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 		 */
 		Slugify slg = new Slugify().withTransliterator(true).withUnderscoreSeparator(true);
 		String result = slg.slugify("Italia vs Lukaku: Màn đối đầu với con quái vật mà mình nuôi nấng");
-		System.out.print(result);
+		
 	}
 }

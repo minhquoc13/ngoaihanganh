@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.laptrinhjavaweb.dao.impl.NewDAO;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.model.UserModel;
 import com.laptrinhjavaweb.service.INewService;
@@ -21,6 +22,9 @@ public class NewAPI extends HttpServlet {
 
 	@Inject
 	private INewService newService;
+	
+	@Inject
+	private NewDAO newDAO;
 
 	private static final long serialVersionUID = -915988021506484384L;
 
@@ -32,6 +36,7 @@ public class NewAPI extends HttpServlet {
 		NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
 		newModel.setCreatedBy(((UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL")).getUserName());
 		newModel = newService.save(newModel);
+		newDAO.updateSlug(newModel.getId(), newModel.getTitle());
 		mapper.writeValue(response.getOutputStream(), newModel);
 	}
 
@@ -43,6 +48,7 @@ public class NewAPI extends HttpServlet {
 		NewModel updateNew = HttpUtil.of(request.getReader()).toModel(NewModel.class);
 		updateNew.setModifiedBy(((UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL")).getUserName());
 		updateNew = newService.update(updateNew);
+		newDAO.updateSlug(updateNew.getId(), updateNew.getTitle());
 		mapper.writeValue(response.getOutputStream(), updateNew);
 	}
 

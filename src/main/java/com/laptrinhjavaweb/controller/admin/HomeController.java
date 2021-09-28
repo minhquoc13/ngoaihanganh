@@ -18,7 +18,7 @@ import com.laptrinhjavaweb.dao.impl.ChartDAO;
 public class HomeController extends HttpServlet {
 
 	@Inject
-	private CategoryDAO c;
+	private CategoryDAO cateDAO;
 	
 	@Inject
 	private ChartDAO chart;
@@ -29,7 +29,7 @@ public class HomeController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		chart.chartCategory();
-		request.setAttribute("category", c.findAll());
+		request.setAttribute("category", cateDAO.findAll());
 		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/home.jsp");
 		rd.forward(request, response);
 	}

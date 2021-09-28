@@ -134,7 +134,7 @@ public class HomeController extends HttpServlet {
 				Cookie pass = new Cookie("password", model.getPassword());
 				userName.setMaxAge(60*60*24);
 				if(remember != null) {
-				pass.setMaxAge(60*60*24);
+				pass.setMaxAge(60*60*24*3);
 				} else pass.setMaxAge(0);
 				response.addCookie(userName);
 				response.addCookie(pass);

@@ -14,14 +14,11 @@ import com.laptrinhjavaweb.dao.impl.NewDAO;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.service.INewService;
 
-@WebServlet(urlPatterns = {"/watch_video"})
+@WebServlet(urlPatterns = { "/watch_video/*" })
 
 public class DetailVideoController extends HttpServlet {
 
 	@Inject
-	private INewService newService;
-	
-	@Inject 
 	private NewDAO newDAO;
 
 	private static final long serialVersionUID = 2686801510274002166L;
@@ -29,12 +26,19 @@ public class DetailVideoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		Long id = Long.parseLong(request.getParameter("vid"));
-		NewModel v = newService.findOne(id);
-		newDAO.AddViewNew(id); // + view
-		request.setAttribute("video", v);
-		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Video.jsp");
-		rd.forward(request, response);
+		try {
+			// get slug		
+			String pathInfo = ((HttpServletRequest) request).getRequestURL().toString();
+			String slug = pathInfo.split("watch_video/")[1]; // split url
+			NewModel video = newDAO.findNewBySlug(slug);
+			newDAO.AddViewNew(video.getId()); // + view
+			request.setAttribute("video", video);
+			RequestDispatcher rd = request.getRequestDispatcher("/views/web/Video.jsp");
+			rd.forward(request, response);
+		} catch (Exception e) {
+			response.sendRedirect(request.getContextPath() + "video");
+		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

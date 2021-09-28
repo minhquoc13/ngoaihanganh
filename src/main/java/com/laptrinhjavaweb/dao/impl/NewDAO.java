@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.github.slugify.Slugify;
 import com.laptrinhjavaweb.dao.INewDAO;
 import com.laptrinhjavaweb.mapper.NewMapper;
 import com.laptrinhjavaweb.model.NewModel;
@@ -16,7 +17,7 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		String sql = "SELECT * FROM news WHERE categoryid = ?";
 		return query(sql, new NewMapper(), categoryId);
 	}
-	
+
 	public NewModel findNewBySlug(String slug) {
 		String sql = "SELECT * FROM news WHERE slug = ?";
 		return query(sql, new NewMapper(), slug).get(0);
@@ -126,6 +127,7 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		String sql = "select * from news where categoryid != 8 and id != ? order by RAND() limit 4";
 		return query(sql, new NewMapper(), id);
 	}
+
 	@Override
 	public List<NewModel> getAllVideo() {
 		String sql = "select * from news where categoryid = 8 order by id desc";
@@ -146,11 +148,9 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 
 	public NewModel findNewById(String id) {
 		String sql = "SELECT * FROM news WHERE id = ?";
-		List<NewModel> news = query(sql, new NewMapper(), id);
-		NewModel n = news.get(0);
-		return n;
+		return query(sql, new NewMapper(), id).get(0);
 	}
-	
+
 //	public void AddViewNew(String id) {
 //		Connection connection = null;
 //		PreparedStatement statement = null;
@@ -177,6 +177,13 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 	public void AddViewNew(Long id) {
 		String sql = "UPDATE news SET view = view +1 where id = ?";
 		update(sql, id);
+	}
+
+	public void updateSlug(Long id, String title) {
+		Slugify slg = new Slugify().withTransliterator(true).withUnderscoreSeparator(true);
+		String slug = slg.slugify(title);
+		String sql = "UPDATE news SET slug = ? where id = ?";
+		update(sql, slug, id);
 	}
 
 	public static void main(String[] args) {

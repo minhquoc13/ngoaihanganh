@@ -31,7 +31,7 @@
 	</div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark fixed">
-	<a href="trang-chu" class="navbar-brand p-0"><img src="<c:url value='/resources/web/images/logo.png' />"></a>
+	<a href="<c:url value="/trang-chu"/>" class="navbar-brand p-0"><img src="<c:url value='/resources/web/images/logo.png' />"></a>
 	
 	<a href="trang-chu" class="navbar-brand">Ngoại hạng Anh</a>
 	

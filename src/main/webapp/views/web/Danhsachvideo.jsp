@@ -48,7 +48,7 @@ pageEncoding="UTF-8"%>
 					<li class="video">
 						<section>
 							<div class="col-12 p-0 m-0">
-								<a href="watch_video?vid=${v.id}">
+								<a href="watch_video/${v.slug}">
 									<figure>
 										<span class="thumbnail">
 											<img src="${v.thumbnail}">
