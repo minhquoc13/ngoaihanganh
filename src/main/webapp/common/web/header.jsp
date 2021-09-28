@@ -33,7 +33,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed">
 	<a href="<c:url value="/trang-chu"/>" class="navbar-brand p-0"><img src="<c:url value='/resources/web/images/logo.png' />"></a>
 	
-	<a href="trang-chu" class="navbar-brand">Ngoại hạng Anh</a>
+	<a href="<c:url value="/trang-chu"/>" class="navbar-brand">Ngoại hạng Anh</a>
 	
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 	<span class="navbar-toggler-icon"></span>
@@ -57,9 +57,9 @@
 			</ul>
 			<ul class="navbar-nav" id="navbar-right">
 			<li class="nav-item mt-auto mb-auto">
-				<form class="form-inline">
-					<input class="form-control mr-md-1" type="search" name="search" placeholder="Tìm kiếm..." aria-label="search">
-					<button class="btn btn-success" type="submit"><i class="fas fa-search"></i>
+				<form class="form-inline" action="<c:url value="/search"/>">
+					<input class="form-control mr-md-1" type="search" name="keyword" placeholder="Tìm kiếm..." aria-label="search">
+					<button class="btn btn-success" id="btn-search" type="submit"><i class="fas fa-search"></i>
 					</button>
 				</form>
 			</li>

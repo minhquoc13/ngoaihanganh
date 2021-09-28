@@ -43,5 +43,7 @@
     <script type="text/javascript" src="<c:url value='/resources/web/bootstrap/js/bootstrap.bundle.min.js' />"></script>
 	<script type="text/javascript" src="<c:url value='/resources/web/bootstrap/js/bootstrap.min.js' />"></script>
 	
+	<script type="text/javascript" src="<c:url value='/resources/web/js/checkBtnSearch.js' />"></script>
+	
 	<!-- SDK Facebook -->
 </html>

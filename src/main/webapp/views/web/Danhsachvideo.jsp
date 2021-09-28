@@ -55,7 +55,9 @@ pageEncoding="UTF-8"%>
 											<span class="playvideo-icon"><i class="fas fa-play"></i></span>
 										</span>
 										<figcaption>
-										<h5 class="news-tag">Video</h5>
+										<c:if test="${v.categoryId == ca.id}">
+										<h5 class="news-tag">${ca.name}</h5>
+										</c:if>
 										<h3 class="news-title">${v.title}</h3>
 										<h5 class="text">${v.shortDescription}</h5>
 										</figcaption>

@@ -13,7 +13,7 @@ pageEncoding="UTF-8"%>
 				<div class="wrapper mt-0 pt-0 pb-0">
 					<div class="col-12 p-0">
 						<div class="header-content">
-							<h1 class="page-title">Tin tức</h1>
+							<h1 class="page-title">Kết quả tìm kiếm cho: "${keyword}"</h1>
 						</div>
 					</div>
 				</div>
@@ -57,22 +57,30 @@ pageEncoding="UTF-8"%>
 					</div>
 				</section>
 				<ul class="newsList p-0" id="content">
-					<c:forEach items="${allnews}" var="o" begin="0" end="4">
-					<li class="new">
+					<c:forEach items="${searchResults}" var="s">
+					<li class="video">
 						<section>
 							<div class="col-12 p-0 m-0">
-								<a href="bai-viet/${o.slug}">
+								<c:if test="${o.categoryId == 8 }">
+										<a href="watch_video/${s.slug}">
+								</c:if>
+								<c:if test="${o.categoryId != 8 }">
+										<a href="bai-viet/${s.slug}">
+								</c:if>
+									
 									<figure>
-										<span class="thumbnail"> <img src="${o.thumbnail}">
+										<span class="thumbnail">
+											<img src="${s.thumbnail}">
+											<span class="playvideo-icon"><i class="fas fa-play"></i></span>
 										</span>
 										<figcaption>
 										<c:forEach items="${category}" var="ca">
-										<c:if test="${o.categoryId == ca.id}">
+										<c:if test="${s.categoryId == ca.id}">
 										<h5 class="news-tag">${ca.name}</h5>
 										</c:if>
 										</c:forEach>
-										<h3 class="news-title">${o.title}</h3>
-										<h5 class="text">${o.shortDescription}</h5>
+										<h3 class="news-title">${s.title}</h3>
+										<h5 class="text">${s.shortDescription}</h5>
 										</figcaption>
 									</figure>
 								</a>
@@ -81,59 +89,11 @@ pageEncoding="UTF-8"%>
 					</li>
 					</c:forEach>
 				</ul>
-				<button id="loadMore" class="btn" onclick="loadMore()"><i class="fas fa-arrow-down"></i></button>
 			</div>
 			</main>
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-			<link href="<c:url value='/resources/web/css/stylepage-danhsachbaiviet.css' />" rel="stylesheet" type="text/css" media="all" />			
-		    <link href="<c:url value='/resources/web/css/responsive/danhsachbaiviet.css' />" rel="stylesheet" type="text/css" media="all"/>
-			<script>
-			
-			function loadMore() {
-				var amount = document.getElementsByClassName("new").length;
-				var url = window.location.hostname;
-				console.log(url);
-				$.ajax({
-					async: false,
-					url: '/loadMore-new',
-					type: "get",
-					data:{
-						exits: amount,
-						action: "loadMore"
-					},
-					success : function(data) {
-						var row = document.getElementById("content");
-						row.innerHTML += data;
-					},
-					error : function(xhr) {
-						//Do Something to handle error
-					}
-				});
-			}
-			function searchByName(param){
-				var txtSearch = param.value;
-				var url = window.location.hostname;
-				var btn = document.getElementById("loadMore");
-				$.ajax({
-					url: "/search-new",
-					type: "get",
-					data:{
-						txt : txtSearch
-					},
-					success : function(data) {
-						var row = document.getElementById("content");
-						row.innerHTML = data;
-						btn.style.display = "none";
-					},
-					error : function(xhr) {
-						
-					}
-				});
-			}
-			
-			</script>
-		
-		
+		<link href="<c:url value='/resources/web/css/stylepage-danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
+		<link href="<c:url value='/resources/web/css/responsive/danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
 	</body>
 </html>

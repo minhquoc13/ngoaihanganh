@@ -86,13 +86,18 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 	}
 
 	public List<NewModel> searchNewAjax(String txtSearch) {
-		String sql = "select * from news  where title like ? and categoryid != 8 order by id desc";
+		String sql = "select * from news where title like ? and categoryid != 8 order by id desc";
 		return query(sql, new NewMapper(), "%" + txtSearch + "%");
 	}
 
 	public List<NewModel> searchVideoAjax(String txtSearch) {
-		String sql = "select * from news  where title like ? and categoryid = 8 order by id desc";
+		String sql = "select * from news where title like ? and categoryid = 8 order by id desc";
 		return query(sql, new NewMapper(), "%" + txtSearch + "%");
+	}
+	
+	public List<NewModel> searchNewsAndVideo(String keyword) {
+		String sql = "select * from news where title like ? order by id desc";
+		return query(sql, new NewMapper(), "%" + keyword + "%");
 	}
 
 	@Override
@@ -151,29 +156,6 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		return query(sql, new NewMapper(), id).get(0);
 	}
 
-//	public void AddViewNew(String id) {
-//		Connection connection = null;
-//		PreparedStatement statement = null;
-//		String sql = "UPDATE news SET view = view +1 where id = ?";		
-//		try {
-//			connection = getConnection();
-//			statement = connection.prepareStatement(sql);
-//			statement.setString(1, id);
-//			statement.executeUpdate();
-//		} catch (SQLException e) {
-//			System.out.print(e);
-//		} finally {
-//			try {
-//				if (connection != null) {
-//					connection.close();
-//				}
-//				if (statement != null) {
-//					statement.close();
-//				}
-//			} catch (SQLException e) {
-//			}
-//		}
-//	}
 	public void AddViewNew(Long id) {
 		String sql = "UPDATE news SET view = view +1 where id = ?";
 		update(sql, id);

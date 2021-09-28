@@ -38,19 +38,19 @@ public class HomeController extends HttpServlet {
 
 	@Inject
 	private INewService newService;
-	
+
 	@Inject
 	private NewDAO newDao;
-	
+
 	@Inject
 	private IInfoTeamService infoTeamService;
-	
+
 	@Inject
-	private	ResultMatchDAO resultMatchDAO;
+	private ResultMatchDAO resultMatchDAO;
 
 	@Inject
 	private BxhDAO bxhDAO;
-	
+
 	private static final long serialVersionUID = 2686801510274002166L;
 
 	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
@@ -63,14 +63,14 @@ public class HomeController extends HttpServlet {
 			String alert = request.getParameter("alert");
 			String message = request.getParameter("message");
 			Cookie arr[] = request.getCookies();
-			if(arr != null) {
-				for(Cookie o : arr) {
-					if(o.getName().equals("userName")) {
+			if (arr != null) {
+				for (Cookie o : arr) {
+					if (o.getName().equals("userName")) {
 						request.setAttribute("userName", o.getValue());
 					}
-					if(o.getName().equals("password")) {
+					if (o.getName().equals("password")) {
 						request.setAttribute("password", o.getValue());
-					}	
+					}
 				}
 			}
 			if (message != null && alert != null) {
@@ -82,15 +82,15 @@ public class HomeController extends HttpServlet {
 		} else if (action != null && action.equals("logout")) {
 			SessionUtil.getInstance().removeValue(request, "USERMODEL");
 			response.sendRedirect(request.getContextPath() + "/trang-chu");
-		}	else {
-			
+		} else {
+
 			// set du lieu len client
 			// set top bar
 			List<InfoTeamModel> info = infoTeamService.findAll();
 			request.setAttribute("info", info);
 			// set category
 			request.setAttribute("category", categoryService.findAll());
-			// set last week
+			// set week
 			int week = resultMatchDAO.getWeekToDisplay();
 			request.setAttribute("weekToDisplay", week);
 			// set rs match
@@ -101,20 +101,20 @@ public class HomeController extends HttpServlet {
 			// set heronew
 			List<NewModel> heroNew = newService.getHeroNew();
 			request.setAttribute("heroNew", heroNew);
-			//set tin lien quan
+			// set tin lien quan
 			request.setAttribute("tcd", newDao.getTinCongDong()); // tin cong dong
 			request.setAttribute("tcn", newDao.getTinChuyenNhuong()); // tin chuyen nhuong
 
 			// set news
 			List<NewModel> newsList = newService.get4New();
-			request.setAttribute("news4", newsList);  
+			request.setAttribute("news4", newsList);
 			// set hero video
 			List<NewModel> heroVideo = newService.getHeroVideo();
 			request.setAttribute("heroVideo", heroVideo);
 			// set 4 video
 			List<NewModel> video4 = newService.get4Video();
 			request.setAttribute("video4", video4);
-			
+
 			RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
 			rd.forward(request, response);
 		}
@@ -122,8 +122,10 @@ public class HomeController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String action = request.getParameter("action");
 		String remember = request.getParameter("remember");
+
 		if (action != null && action.equals("login")) {
 			UserModel model = FormUtil.toModel(UserModel.class, request);
 			model = userService.findByUserNameAndPasswordAndStatus(model.getUserName(), model.getPassword(), 1);
@@ -132,10 +134,11 @@ public class HomeController extends HttpServlet {
 				// set cookie
 				Cookie userName = new Cookie("userName", model.getUserName());
 				Cookie pass = new Cookie("password", model.getPassword());
-				userName.setMaxAge(60*60*24);
-				if(remember != null) {
-				pass.setMaxAge(60*60*24*3);
-				} else pass.setMaxAge(0);
+				userName.setMaxAge(60 * 60 * 24);
+				if (remember != null) {
+					pass.setMaxAge(0);
+				} else
+					pass.setMaxAge(0);
 				response.addCookie(userName);
 				response.addCookie(pass);
 				if (model.getRole().getCode().equals("USER")) {
@@ -146,7 +149,7 @@ public class HomeController extends HttpServlet {
 			} else {
 				response.sendRedirect(request.getContextPath()
 						+ "/dang-nhap?action=login&message=username_password_invalid&alert=danger");
-			} 
+			}
 
 		}
 	}
