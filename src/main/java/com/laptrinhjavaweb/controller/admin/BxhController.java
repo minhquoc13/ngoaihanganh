@@ -18,7 +18,7 @@ public class BxhController extends HttpServlet {
 
 	@Inject
 	private BxhDAO BxhDAO;
-	
+
 	@Inject
 	private InfoTeamDAO infoTeamDAO;
 	private static final long serialVersionUID = 2686801510274002166L;
@@ -27,7 +27,7 @@ public class BxhController extends HttpServlet {
 			throws ServletException, IOException {
 
 		String action = request.getParameter("action");
-			if (action != null && action.equals("update")) {
+		if (action != null && action.equals("updateOne")) {
 			Long id = Long.parseLong(request.getParameter("id"));
 			String numMatch = request.getParameter("numMatch");
 			String won = request.getParameter("won");
@@ -35,13 +35,17 @@ public class BxhController extends HttpServlet {
 			String lost = request.getParameter("lost");
 			String gd = request.getParameter("gd");
 			String totalScore = request.getParameter("totalScore");
-			BxhDAO.updateBxh(id, numMatch, won, drwan, lost, gd, totalScore);
+			BxhDAO.updateOne(id, numMatch, won, drwan, lost, gd, totalScore);
 			request.setAttribute("mess", 2);
-			}
-			request.setAttribute("bxh", BxhDAO.getAll());
-			request.setAttribute("info", infoTeamDAO.findAll());
-			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/bxh/list.jsp");
-			rd.forward(request, response);
+		}
+		if (action != null && action.equals("updateAuto")) {
+			BxhDAO.updateAllAuto();
+			request.setAttribute("mess", 2);
+		}
+		request.setAttribute("bxh", BxhDAO.getAll());
+		request.setAttribute("info", infoTeamDAO.findAll());
+		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/bxh/list.jsp");
+		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -7,14 +7,14 @@ pageEncoding="UTF-8"%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Quản lý lịch đấu</title>
+        <title>Quản lý bảng xếp hạng</title>
     </head>
     <body>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Lịch đấu</h1>
+            <h1 class="mt-4">Bảng xếp hạng</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="index.html">Quản trị danh mục</a></li>
-                <li class="breadcrumb-item active">Bảng người dùng</li>
+                <li class="breadcrumb-item active">Bảng xếp hạng</li>
             </ol>
             <c:if test="${mess == 0}">
             <div class="alert alert-danger" role="alert">
@@ -43,6 +43,12 @@ pageEncoding="UTF-8"%>
                 </div>
                 
                 <div class="card-body">
+                <a href="admin-bxh?action=updateAuto" flag="info"
+                        class="dt-button buttons-colvis btn btn-white btn-primary btn-bold add" title='Cập nhật tự động'>
+                        <span>
+                            <i class="fa fa-plus-circle bigger-110 purple"></i>
+                        </span>
+                    </a>
                     <table id="datatablesSimple">
                         <thead>
                             <tr style="font-size: 18px; font-weight: 200;">

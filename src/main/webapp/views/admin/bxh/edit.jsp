@@ -67,7 +67,7 @@
                     </div>
                             
                             <div class="mt-4">
-                                <input type="hidden" name="action" value="update">
+                                <input type="hidden" name="action" value="updateOne">
                                 <input type="hidden" name="id" value="${bxh.id}">
                                 <button type="submit" class="btn btn-primary" onclick="location.href='admin-bxh'">Cập nhật</button>
                                 <a class="btn btn-secondary" onclick="location.href='admin-bxh'">Quay trở lại</a>

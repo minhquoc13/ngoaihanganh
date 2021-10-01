@@ -6,11 +6,10 @@ public class ResultMatchModel {
 	private String matchDate;
 	private String matchTime;
 	private String team1;
-	private int goal1;
+	private String goal1;
 	private String team2;
-	private int goal2;
+	private String goal2;
 	private String stadium;
-	
 	public int getId() {
 		return id;
 	}
@@ -41,10 +40,10 @@ public class ResultMatchModel {
 	public void setTeam1(String team1) {
 		this.team1 = team1;
 	}
-	public int getGoal1() {
+	public String getGoal1() {
 		return goal1;
 	}
-	public void setGoal1(int goal1) {
+	public void setGoal1(String goal1) {
 		this.goal1 = goal1;
 	}
 	public String getTeam2() {
@@ -53,10 +52,10 @@ public class ResultMatchModel {
 	public void setTeam2(String team2) {
 		this.team2 = team2;
 	}
-	public int getGoal2() {
+	public String getGoal2() {
 		return goal2;
 	}
-	public void setGoal2(int goal2) {
+	public void setGoal2(String goal2) {
 		this.goal2 = goal2;
 	}
 	public String getStadium() {
@@ -65,7 +64,5 @@ public class ResultMatchModel {
 	public void setStadium(String stadium) {
 		this.stadium = stadium;
 	}
-	
-	
 	
 }

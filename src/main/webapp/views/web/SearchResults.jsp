@@ -17,11 +17,11 @@ pageEncoding="UTF-8"%>
 						</div>
 					</div>
 				</div>
-				<div class="social-share">
+<!-- 				<div class="social-share">
 					<a href=""><div class="btn-share">
 						<i class="far fa-share-square"></i>Chia sẻ
 					</div></a>
-				</div>
+				</div> -->
 			</header>
 			<!-- content -->
 			<div class="wrapper col-lg-10 col-sm-12 pt-0">

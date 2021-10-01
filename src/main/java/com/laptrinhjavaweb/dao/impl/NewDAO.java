@@ -96,8 +96,8 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 	}
 	
 	public List<NewModel> searchNewsAndVideo(String keyword) {
-		String sql = "select * from news where title like ? order by id desc";
-		return query(sql, new NewMapper(), "%" + keyword + "%");
+		String sql = "select * from news where title like ? or shortdescription like ? order by id desc";
+		return query(sql, new NewMapper(), "%" + keyword + "%", "%" + keyword + "%");
 	}
 
 	@Override
