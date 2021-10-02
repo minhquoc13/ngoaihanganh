@@ -44,9 +44,9 @@ pageEncoding="UTF-8"%>
                 
                 <div class="card-body">
                 <a href="admin-bxh?action=updateAuto" flag="info"
-                        class="dt-button buttons-colvis btn btn-white btn-primary btn-bold add" title='Cập nhật tự động'>
+                        class="dt-button buttons-colvis btn btn-white btn-success btn-bold add" title='Cập nhật tự động'>
                         <span>
-                            <i class="fa fa-plus-circle bigger-110 purple"></i>
+                            <i class="fas fa-atom"></i>
                         </span>
                     </a>
                     <table id="datatablesSimple">

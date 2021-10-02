@@ -12,7 +12,14 @@
 	</head>
 
 	<body>
-		<div class="main-content pt-4">
+	<div class="pl-2" style="margin-left: 30px;">
+	<h1 class="mt-4 ml-2">Bài viết</h1>
+            <ol class="breadcrumb mb-4 ml-3">
+                <li class="breadcrumb-item"><a href="index.html">Quản trị danh mục</a></li>
+                <li class="breadcrumb-item active">Bài viết</li>
+            </ol>
+            </div>
+		<div class="main-content">
 		<form action="<c:url value='/admin-new'/>" id="formSubmit" method="get">
 				<div class="main-content-inner">
 					<div class="page-content">

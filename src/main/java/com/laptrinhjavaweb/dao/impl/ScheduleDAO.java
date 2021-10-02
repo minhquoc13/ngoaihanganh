@@ -118,7 +118,7 @@ public class ScheduleDAO extends AbstractDAO<ScheduleModel> {
 		}
 	}
 
-	public void DeleteSchedule(Long id) {
+	public void DeleteOne(Long id) {
 		String sql = "Delete from schedule where id = ?";
 		update(sql, id);
 	}
@@ -132,12 +132,11 @@ public class ScheduleDAO extends AbstractDAO<ScheduleModel> {
 			return list.get(0);
 		}
 	}
-	/*
-	 * public static void main(String[] args) {
-	 * 
-	 * ScheduleDAO scheduleDAO = new ScheduleDAO(); List<ScheduleModel> list =
-	 * scheduleDAO.getSchedule(); for(ScheduleModel o : list) {
-	 * System.out.println(o); } }
-	 */
+	
+	 public static void main(String[] args) {
+	  
+	  ScheduleDAO scheduleDAO = new ScheduleDAO();
+	  scheduleDAO.DeleteOne((long) 4);
 
 }
+	 }

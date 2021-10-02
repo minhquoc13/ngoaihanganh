@@ -111,25 +111,9 @@ public class ResultMatchDAO extends AbstractDAO<ResultMatchModel> {
 		update(sql, goal1, goal2, id);
 	}
 
-	public void updatePlayedMatch() {
-		String sql = "update schedule as s inner join resultmatch as r on s.team1 = r.team1 and s.team2 = r.team2\r\n"
-				+ "set s.played = 1";
-		update(sql);
-	}
-
 	public void DeleteResultMatch(Long id) {
-		String sql = "Delete from resultmatch where id = ?";
+		String sql = "update resultmatch set goal1 = \"?\", goal2 = \"?\" where matchId = ?";
 		update(sql, id);
-	}
-
-	public ResultMatchModel checkResultMatchExits(String team1, String team2) {
-		String sql = "select * from schedule where team1 = '?' and team2 = '?' ";
-		List<ResultMatchModel> list = query(sql, new ResultMatchMapper(), team1, team2);
-		if (list.isEmpty())
-			return null;
-		else {
-			return list.get(0);
-		}
 	}
 
 	public List<ResultMatchModel> getMatchPlayedByTeamName(String teamName) {

@@ -78,27 +78,27 @@ pageEncoding="UTF-8"%>
                             <th>Thao tác</th>
                         </tr>
                         </tfoot>
-                        <tbody style="font-size: 15px;">
+                        <tbody style="font-size: 15px; font-weight: 500;">
                             <c:forEach items="${user}" var="u">
                             <tr>
-                                <td>${u.id}</td>
+                                <th>${u.id}</th>
                                 <th>${u.userName}</th>
-                                <th>${u.fullName}</th>
-                                <th>${u.email}</th>
-                                <th>${u.phone}</th>
-                                <th>
+                                <td>${u.fullName}</td>
+                                <td>${u.email}</td>
+                                <td>${u.phone}</td>
+                                <td>
                                     <c:if test="${u.status == 1}">Active</c:if>
                                     <c:if test="${u.status == 0}">Block</c:if>
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     <c:if test="${u.roleId == 1}">Admin</c:if>
                                     <c:if test="${u.roleId == 2}">User</c:if>
-                                </th>
-                                <th>${u.createdDate}</th>
-                                <th>
+                                </td>
+                                <td>${u.createdDate}</td>
+                                <td>
                                     <a class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" href="admin-loadUser?id=${u.id}"><i class="fas fa-pencil-alt text-white"></i></a>
                                     <a class="dt-button buttons-html5 btn btn-white btn-danger btn-bold" href="admin-user?action=delete&id=${u.id}"><i class="fas fa-trash-alt text-white"></i></a>
-                                </th>
+                                </td>
                             </tr>
                             </c:forEach>
                         </tbody>

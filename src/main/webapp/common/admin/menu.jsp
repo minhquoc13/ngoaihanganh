@@ -12,21 +12,16 @@
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Quản trị danh mục</div>
-                            <a class="nav-link collapsed" href="admin-category" >
-                                <div class="sb-nav-link-icon"><i class="fas fa-align-justify"></i></div>
-                                Thể loại
-<!--                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
-                            </a>
                             <div class="collapse" id="collapse-loaidanhmuc" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <!-- <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Danh mục 1</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Danh mục 2</a>
-                                </nav> -->
                             </div>
                             <a class="nav-link" href='<c:url value="/admin-new?type=list&page=1&maxPageItem=7&sortName=id&sortBy=desc"/>' >
                                 <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                                  Bài viết
                                 
+                            </a>
+                            <a class="nav-link collapsed" href="admin-category" >
+                                <div class="sb-nav-link-icon"><i class="fas fa-align-justify"></i></div>
+                                Thể loại
                             </a>
                             <a class="nav-link collapsed" href="admin-schedule">
                                 <div class="sb-nav-link-icon"><i class="far fa-calendar-alt"></i></div>
