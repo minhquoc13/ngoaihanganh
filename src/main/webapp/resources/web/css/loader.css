@@ -1,0 +1,39 @@
+.dot-bouncing {
+    position: fixed;
+    left: 50%;
+    top: 45%;
+    margin-left: -61.8px;
+    height: 10px;
+    font-size: 30px;
+    width: fit-content;
+    z-index: 10000;
+    }
+    .dot-bouncing::before {
+    content: '⚽🏀🏐';
+    display: inline-block;
+    position: relative;
+    animation: dotBouncing 1s infinite;
+    }
+    @keyframes dotBouncing {
+    0% {
+    top: -20px;
+    animation-timing-function: ease-in;
+    }
+    34% {
+    transform: scale(1, 1);
+    }
+    35% {
+    top: 20px;
+    animation-timing-function: ease-out;
+    transform: scale(1.5, 0.5);
+    }
+    45% {
+    transform: scale(1, 1);
+    }
+    90% {
+    top: -20px;
+    }
+    100% {
+    top: -20px;
+    }
+    }

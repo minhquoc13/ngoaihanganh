@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.laptrinhjavaweb.dao.impl.UserDAO;
+import com.laptrinhjavaweb.model.UserModel;
+import com.laptrinhjavaweb.utils.SessionUtil;
 
-@WebServlet(urlPatterns = { "/profile" })
+@WebServlet(urlPatterns = { "/profile/*" })
 
-public class ProfifeController extends HttpServlet {
+public class ProfileController extends HttpServlet {
 
 	@Inject
 	private UserDAO userDAO;
@@ -24,10 +26,12 @@ public class ProfifeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String id = request.getParameter("id");
+		UserModel model = (UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL");
+		String id = String.valueOf(model.getId());
 		request.setAttribute("user", userDAO.findUserById(id));
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/Profile.jsp");
 		rd.forward(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

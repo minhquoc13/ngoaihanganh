@@ -31,7 +31,7 @@ pageEncoding="UTF-8"%>
             <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
                 <div class="container-fluid">
                     <!-- Brand -->
-                    <a class="h4 mb-0 text-white text-uppercase d-lg-inline-block" href="trang-chu">Trang chủ</a>
+                    <a class="h4 mb-0 text-white text-uppercase d-lg-inline-block" href="<c:url value="/trang-chu"/>">Trang chủ</a>
                     <!-- Form -->
                     <form class="navbar-search navbar-search-dark form-inline mr-3 d-md-flex ml-lg-auto">
                         <div class="form-group mb-0">
@@ -52,7 +52,7 @@ pageEncoding="UTF-8"%>
                                         <c:if test="${user.avatar != NULL and user.avatar != ''}"><img alt="${user.fullName}" src="${user.avatar}"></c:if>
                                     </span>
                                     <div class="media-body ml-2 d-none d-lg-block">
-                                        <a href="thoat?action=logout" class="mb-0 text-sm text-white font-weight-bold">Đăng xuất</a>
+                                        <a href='<c:url value="/thoat?action=logout"/>' class="mb-0 text-sm text-white font-weight-bold">Đăng xuất</a>
                                     </div>
                                 </div>
                             </a>

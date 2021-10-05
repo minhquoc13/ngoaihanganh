@@ -39,6 +39,7 @@ public class SearchController extends HttpServlet {
 		request.setAttribute("keyword", keyword);
 		request.setAttribute("searchResults", news);
 		request.setAttribute("category", cate.findAll());
+		request.setAttribute("size", news.size());
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/SearchResults.jsp");
 		rd.forward(request, response);
 	}

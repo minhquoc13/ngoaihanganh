@@ -79,7 +79,7 @@
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="acc">
-                <a href="profile?id=${USERMODEL.id}" class="dropdown-item">
+                <a href="profile/${USERMODEL.userName}" class="dropdown-item">
                   <i class="fas fa-user"></i>
                   <span>Trang cá nhân</span>
                 </a>

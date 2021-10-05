@@ -17,10 +17,10 @@ pageEncoding="UTF-8"%>
 						</div>
 					</div>
 				</div>
-<!-- 				<div class="social-share">
-					<a href=""><div class="btn-share">
-						<i class="far fa-share-square"></i>Chia sẻ
-					</div></a>
+				<!-- 				<div class="social-share">
+						<a href=""><div class="btn-share">
+								<i class="far fa-share-square"></i>Chia sẻ
+						</div></a>
 				</div> -->
 			</header>
 			<!-- content -->
@@ -56,44 +56,49 @@ pageEncoding="UTF-8"%>
 						</form>
 					</div>
 				</section>
+				<c:if test="${size == 0}">
+				<h2 class="text-center mt-4">Không có kết quả tìm kiếm phù hợp!</h2>
+				</c:if>
 				<ul class="newsList p-0" id="content">
 					<c:forEach items="${searchResults}" var="s">
 					<li class="video">
 						<section>
 							<div class="col-12 p-0 m-0">
 								<c:if test="${o.categoryId == 8 }">
-										<a href="watch_video/${s.slug}">
-								</c:if>
-								<c:if test="${o.categoryId != 8 }">
-										<a href="bai-viet/${s.slug}">
-								</c:if>
-									
-									<figure>
-										<span class="thumbnail">
-											<img src="${s.thumbnail}">
-											<span class="playvideo-icon"><i class="fas fa-play"></i></span>
-										</span>
-										<figcaption>
-										<c:forEach items="${category}" var="ca">
-										<c:if test="${s.categoryId == ca.id}">
-										<h5 class="news-tag">${ca.name}</h5>
+								<a href="watch_video/${s.slug}">
+									</c:if>
+									<c:if test="${o.categoryId != 8 }">
+									<a href="bai-viet/${s.slug}">
 										</c:if>
-										</c:forEach>
-										<h3 class="news-title">${s.title}</h3>
-										<h5 class="text">${s.shortDescription}</h5>
-										</figcaption>
-									</figure>
-								</a>
-							</div>
-						</section>
-					</li>
-					</c:forEach>
-				</ul>
-			</div>
+										
+										<figure>
+											<span class="thumbnail">
+												<img src="${s.thumbnail}">
+												<c:if test="${s.categoryId == 8}">
+												<span class="playvideo-icon"><i class="fas fa-play"></i></span>
+												</c:if>
+											</span>
+											<figcaption>
+											<c:forEach items="${category}" var="ca">
+											<c:if test="${s.categoryId == ca.id}">
+											<h5 class="news-tag">${ca.name}</h5>
+											</c:if>
+											</c:forEach>
+											<h3 class="news-title">${s.title}</h3>
+											<h5 class="text">${s.shortDescription}</h5>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+							</section>
+						</li>
+						</c:forEach>
+					</ul>
+				</div>
 			</main>
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<link href="<c:url value='/resources/web/css/stylepage-danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
-		<link href="<c:url value='/resources/web/css/responsive/danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
-	</body>
-</html>
+			<link href="<c:url value='/resources/web/css/stylepage-danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
+			<link href="<c:url value='/resources/web/css/responsive/danhsachvideo.css' />" rel="stylesheet" type="text/css" media="all"/>
+		</body>
+	</html>
